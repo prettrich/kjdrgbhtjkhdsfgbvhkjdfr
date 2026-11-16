@@ -1,4 +1,4 @@
--- ShadowChat v3.8.6 - 500-character messages and 500-message display history
+-- ShadowChat v3.8.8 - reliable online directory (presence-only changes)
 -- Replace only these two values before running.
 local SUPABASE_URL = "https://jwyubmjadrqpfronkekt.supabase.co"
 local SUPABASE_KEY = "sb_publishable_LVzVuQMyG0-3hDKJlaZ2ag_wquBImsI"
@@ -57,6 +57,8 @@ local activeTab = "Global"
 local presenceReady = false
 local presenceBusy = false
 local presenceRows = {}
+local presenceFetchSerial = 0
+local presenceLastApplied = 0
 local selectedProfile = nil
 local PRESENCE_INTERVAL = 20
 local DIRECTORY_INTERVAL = 8
@@ -581,7 +583,7 @@ fetchDMThread = function()
         return
     end
     local added = false
-    for idx = #data, 1, -1 do
+    for idx = 1, #data do
         local msg = data[idx]
         if msg.id and not dmSeen[msg.id] then
             dmSeen[msg.id] = true
@@ -1528,21 +1530,74 @@ local function heartbeatPresence()
         presenceReady = true
     end
 end
+-- Parse a Supabase UTC timestamp using Roblox's ISO-8601 parser.
+-- Invalid/missing timestamps must never count as online.
+local function presenceTimestamp(value)
+    if type(value) ~= "string" then return nil end
+    local ok, result = pcall(function() return DateTime.fromIsoDate(value) end)
+    return ok and result and result.UnixTimestamp or nil
+end
+
+local function normalizePresence(rows)
+    local now = os.time()
+    local byAccount = {}
+    for _, entry in ipairs(rows) do
+        local last = presenceTimestamp(entry.last_seen)
+        -- Allow a small clock discrepancy, but never show expired entries.
+        if last and last >= now - PRESENCE_TIMEOUT and last <= now + 15 then
+            -- Username is a temporary identity fallback: the presence table
+            -- currently does not include a verified Roblox numeric UserId.
+            local username = tostring(entry.roblox_username or ""):lower()
+            local key = username ~= "" and username or tostring(entry.user_id or "")
+            if key ~= "" then
+                local previous = byAccount[key]
+                if not previous or last > previous._presenceUnix then
+                    local copy = {}
+                    for k, v in pairs(entry) do copy[k] = v end
+                    copy._presenceUnix = last
+                    byAccount[key] = copy
+                end
+            end
+        end
+    end
+    local unique = {}
+    for _, entry in pairs(byAccount) do table.insert(unique, entry) end
+    table.sort(unique, function(a, b)
+        return tostring(a.roblox_username or ""):lower() < tostring(b.roblox_username or ""):lower()
+    end)
+    return unique
+end
+
+local function refreshPresenceDisplay()
+    if not alive then return end
+    local fresh = normalizePresence(presenceRows)
+    if #fresh ~= #presenceRows then
+        presenceRows = fresh
+        drawPlayers()
+        refreshDMPresence()
+    end
+end
+
 local function fetchPlayers()
     if not alive or presenceBusy or not supabaseUserId then return end
     presenceBusy = true
+    presenceFetchSerial += 1
+    local serial = presenceFetchSerial
     local cutoff = os.date("!%Y-%m-%dT%H:%M:%SZ", os.time() - PRESENCE_TIMEOUT)
     local path = "/rest/v1/shadowchat_presence?select=user_id,roblox_username,roblox_display_name,last_seen"
         .. "&last_seen=gte." .. HttpService:UrlEncode(cutoff)
-        .. "&order=roblox_username.asc&limit=200"
+        .. "&order=last_seen.desc&limit=200"
     local code, data, raw = authorized("GET", path)
     presenceBusy = false
-    if not alive then return end
+    if not alive or serial < presenceLastApplied then return end
     if code == 200 and type(data) == "table" then
-        presenceRows = data
+        presenceLastApplied = serial
+        presenceRows = normalizePresence(data)
         drawPlayers()
         refreshDMPresence()
     else
+        -- Don't continue showing a stale directory after a failed request.
+        refreshPresenceDisplay()
         playerSummary.Text = "Players unavailable (" .. tostring(code) .. ")"
         warn("[ShadowChat] Players lookup failed:", raw)
     end
@@ -2031,6 +2086,12 @@ local function getMessages()
         warn("[ShadowChat] Read failed:", raw)
         return
     end
+    task.spawn(function()
+        while alive do
+            refreshPresenceDisplay()
+            task.wait(5)
+        end
+    end)
     if updateDMStatus then updateDMStatus() else status("Connected · Global", C.green) end
     for i = #messages, 1, -1 do
         local m = messages[i]
@@ -2157,4 +2218,4 @@ task.spawn(function()
         if alive then getMessages() end
     end
 end)
-print("[ShadowChat] v3.8.6 started. Use getgenv().ShadowChatStop() to close it.")
+print("[ShadowChat] v3.8.8 started. Use getgenv().ShadowChatStop() to close it.")
