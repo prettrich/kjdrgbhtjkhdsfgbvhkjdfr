@@ -1,0 +1,3345 @@
+ local ScreenGui = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local TextLabel = Instance.new("TextLabel")
+local TextBox = Instance.new("TextBox")
+local TextButton = Instance.new("TextButton")
+local TextLabel_2 = Instance.new("TextLabel")
+
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Frame.Parent = ScreenGui
+Frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Frame.BackgroundTransparency = 0.400
+Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Frame.BorderSizePixel = 0
+Frame.Position = UDim2.new(0.338051617, 0, 0.331761003, 0)
+Frame.Size = UDim2.new(0.202604167, 0, 0.230555556, 0)
+
+TextLabel.Parent = Frame
+TextLabel.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.BorderSizePixel = 0
+TextLabel.Position = UDim2.new(0.0154241649, 0, 0.0306122452, 0)
+TextLabel.Size = UDim2.new(0.961439589, 0, 0.168674699, 0)
+TextLabel.Font = Enum.Font.SourceSansBold
+TextLabel.Text = "Shadow Hub v4.8.9"
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextSize = 45.000
+TextLabel.TextScaled = true
+TextLabel.TextWrapped = true
+
+TextBox.Parent = Frame
+TextBox.BackgroundColor3 = Color3.fromRGB(68, 68, 68)
+TextBox.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextBox.BorderSizePixel = 0
+TextBox.Position = UDim2.new(0.0179948583, 0, 0.196897209, 0)
+TextBox.Size = UDim2.new(0.961439589, 0, 0.232931727, 0)
+TextBox.Font = Enum.Font.SourceSansBold
+TextBox.Text = "ENTER PASS"
+TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextBox.TextSize = 40.000
+TextBox.TextScaled = true
+TextBox.TextWrapped = true
+
+TextButton.Parent = Frame
+TextButton.BackgroundColor3 = Color3.fromRGB(68, 68, 68)
+TextButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextButton.BorderSizePixel = 0
+TextButton.Position = UDim2.new(0.0179948583, 0, 0.457548469, 0)
+TextButton.Size = UDim2.new(0.958868894, 0, 0.200803213, 0)
+TextButton.Font = Enum.Font.SourceSansBold
+TextButton.Text = "open"
+TextButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextButton.TextSize = 40.000
+TextButton.TextScaled = true
+TextButton.TextWrapped = true
+
+TextLabel_2.Parent = Frame
+TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.BackgroundTransparency = 1.000
+TextLabel_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_2.BorderSizePixel = 0
+TextLabel_2.Position = UDim2.new(0.0179948583, 0, 0.702811241, 0)
+TextLabel_2.Size = UDim2.new(0.958868894, 0, 0.297188755, 0)
+TextLabel_2.Font = Enum.Font.SourceSansBold
+TextLabel_2.Text = "Security System\n[[No kidders allowed]]"
+TextLabel_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.TextSize = 30.000
+TextLabel_2.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.TextScaled = true
+TextLabel_2.TextWrapped = true
+
+
+local correctPassword = "Naliza2020" -- Define the correct password
+
+TextBox.Focused:Connect(function()
+	if TextBox.Text == "ENTER PASS" then
+		TextBox.Text = ""
+	end
+end)
+
+TextButton.MouseButton1Click:Connect(function()
+	local enteredText = TextBox.Text
+	if enteredText == correctPassword then
+		TextLabel_2.Text = "Access Granted!"
+		TextLabel_2.TextColor3 = Color3.fromRGB(0, 255, 0)
+		print("worked") -- Print to console on correct password
+
+while not game:IsLoaded() or not game:GetService("CoreGui") or not game:GetService("Players").LocalPlayer or not game:GetService("Players").LocalPlayer.PlayerGui or not game:GetService("CoreGui"):FindFirstChild("TopBarApp") or not game:GetService("CoreGui"):FindFirstChild("PlayerList") or not game.Players.LocalPlayer.Character do task.wait(0.03) end
+local on = true -- Change to false if you want script to not run.
+if not on then return end
+if game.PlaceId ~= 823323202 then return end
+
+
+
+local ShadowHub = Instance.new("ScreenGui")
+local AdminFrame = Instance.new("Frame")
+local TopBar = Instance.new("Frame")
+local TextLabel = Instance.new("TextLabel")
+local MidBar = Instance.new("Frame")
+local MainFrame = Instance.new("Frame")
+local HomeFrame = Instance.new("Frame")
+local UIListLayout = Instance.new("UIListLayout")
+local Frame1 = Instance.new("Frame")
+local TextLabel_2 = Instance.new("TextLabel")
+local Frame2 = Instance.new("Frame")
+local SubFrame1 = Instance.new("Frame")
+local TextLabel_3 = Instance.new("TextLabel")
+local TextButton = Instance.new("TextButton")
+local SubFrame2 = Instance.new("Frame")
+local TextButton_2 = Instance.new("TextButton")
+local TextLabel_4 = Instance.new("TextLabel")
+local Frame3 = Instance.new("Frame")
+local SubFrame1_2 = Instance.new("Frame")
+local TextLabel_5 = Instance.new("TextLabel")
+local TextButton_3 = Instance.new("TextButton")
+local SubFrame2_2 = Instance.new("Frame")
+local TextButton_4 = Instance.new("TextButton")
+local TextLabel_6 = Instance.new("TextLabel")
+local Frame4 = Instance.new("Frame")
+local SubFrame1_3 = Instance.new("Frame")
+local TextLabel_7 = Instance.new("TextLabel")
+local TextButton_5 = Instance.new("TextButton")
+local SubFrame2_3 = Instance.new("Frame")
+local TextButton_6 = Instance.new("TextButton")
+local TextLabel_8 = Instance.new("TextLabel")
+local Frame5 = Instance.new("Frame")
+local SubFrame1_4 = Instance.new("Frame")
+local TextLabel_9 = Instance.new("TextLabel")
+local TextButton_7 = Instance.new("TextButton")
+local SubFrame2_4 = Instance.new("Frame")
+local TextButton_8 = Instance.new("TextButton")
+local TextLabel_10 = Instance.new("TextLabel")
+local Frame6 = Instance.new("Frame")
+local SubFrame1_5 = Instance.new("Frame")
+local TextLabel_11 = Instance.new("TextLabel")
+local TextButton_9 = Instance.new("TextButton")
+local SubFrame2_5 = Instance.new("Frame")
+local TextButton_10 = Instance.new("TextButton")
+local TextLabel_12 = Instance.new("TextLabel")
+local Frame7 = Instance.new("Frame")
+local SubFrame1_6 = Instance.new("Frame")
+local TextLabel_13 = Instance.new("TextLabel")
+local TextButton_11 = Instance.new("TextBox")
+local SubFrame2_6 = Instance.new("Frame")
+local TextButton_12 = Instance.new("TextBox")
+local TextLabel_14 = Instance.new("TextLabel")
+local Frame8 = Instance.new("Frame")
+local SubFrame1_7 = Instance.new("Frame")
+local TextLabel_15 = Instance.new("TextLabel")
+local SubFrame2_7 = Instance.new("Frame")
+local TextLabel_16 = Instance.new("TextLabel")
+local Frame9 = Instance.new("Frame")
+local SubFrame1_8 = Instance.new("Frame")
+local TextLabel_17 = Instance.new("TextLabel")
+local SubFrame2_8 = Instance.new("Frame")
+local TextLabel_18 = Instance.new("TextLabel")
+local Frame10 = Instance.new("Frame")
+local SubFrame1_9 = Instance.new("Frame")
+local TextLabel_19 = Instance.new("TextLabel")
+local SubFrame2_9 = Instance.new("Frame")
+local TextLabel_20 = Instance.new("TextLabel")
+local Frame11 = Instance.new("Frame")
+local SubFrame1_10 = Instance.new("Frame")
+local TextLabel_21 = Instance.new("TextLabel")
+local SubFrame2_10 = Instance.new("Frame")
+local TextLabel_22 = Instance.new("TextLabel")
+local Frame0 = Instance.new("Frame")
+local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
+local AdminImgBtn = Instance.new("ImageButton")
+
+
+ShadowHub.Name = "ShadowHub V1"
+ShadowHub.Parent = game:GetService("CoreGui")
+ShadowHub.ResetOnSpawn = false
+
+AdminFrame.Name = "AdminFrame"
+AdminFrame.Parent = ShadowHub
+AdminFrame.AnchorPoint = Vector2.new(0, 0.5)
+AdminFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+AdminFrame.BackgroundTransparency = 0.400
+AdminFrame.BorderColor3 = Color3.fromRGB(40, 40, 40)
+AdminFrame.BorderSizePixel = 3
+AdminFrame.Position = UDim2.new(0.625, 0, 0.600000024, 0)
+AdminFrame.Size = UDim2.new(0.245491371, 0, 0.687170804, 0)
+AdminFrame.ZIndex = 2
+
+TopBar.Name = "TopBar"
+TopBar.Parent = AdminFrame
+TopBar.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+TopBar.BackgroundTransparency = 0.400
+TopBar.Size = UDim2.new(1, 0, 0.0556379817, 0)
+TopBar.ZIndex = 2
+
+TextLabel.Parent = TopBar
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 1.000
+TextLabel.Size = UDim2.new(1, 0, 1, 0)
+TextLabel.ZIndex = 2
+TextLabel.Font = Enum.Font.Fantasy
+TextLabel.Text = "     Shadow Hub v4.8.9     "
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextScaled = true
+TextLabel.TextSize = 14.000
+TextLabel.TextWrapped = true
+
+MidBar.Name = "MidBar"
+MidBar.Parent = AdminFrame
+MidBar.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+MidBar.BackgroundTransparency = 1.000
+MidBar.Position = UDim2.new(0, 0, 0.0556379817, 0)
+MidBar.Size = UDim2.new(1, 0, 0.943372905, 0)
+MidBar.ZIndex = 2
+
+MainFrame.Name = "MainFrame"
+MainFrame.Parent = MidBar
+MainFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+MainFrame.BackgroundTransparency = 1.000
+MainFrame.Size = UDim2.new(1, 0, 1, 0)
+
+HomeFrame.Name = "HomeFrame"
+HomeFrame.Parent = MainFrame
+HomeFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+HomeFrame.BackgroundTransparency = 1.000
+HomeFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+HomeFrame.BorderSizePixel = 0
+HomeFrame.Size = UDim2.new(1, 0, 1, 0)
+
+UIListLayout.Parent = HomeFrame
+UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+
+Frame1.Name = "Frame1"
+Frame1.Parent = HomeFrame
+Frame1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Frame1.BackgroundTransparency = 1.000
+Frame1.LayoutOrder = 1
+Frame1.Size = UDim2.new(0.981999993, 0, 0.0579999983, 0)
+Frame1.ZIndex = 3
+
+TextLabel_2.Parent = Frame1
+TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.BackgroundTransparency = 1.000
+TextLabel_2.Size = UDim2.new(1, 0, 1, 0)
+TextLabel_2.ZIndex = 2
+TextLabel_2.Font = Enum.Font.Fantasy
+TextLabel_2.Text = "Training"
+TextLabel_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.TextScaled = true
+TextLabel_2.TextSize = 14.000
+TextLabel_2.TextWrapped = true
+
+Frame2.Name = "Frame2"
+Frame2.Parent = HomeFrame
+Frame2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Frame2.BackgroundTransparency = 1.000
+Frame2.LayoutOrder = 2
+Frame2.Size = UDim2.new(0.981999993, 0, 0.086939998, 0)
+Frame2.ZIndex = 2
+
+SubFrame1.Name = "SubFrame1"
+SubFrame1.Parent = Frame2
+SubFrame1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+SubFrame1.BackgroundTransparency = 1.000
+SubFrame1.Size = UDim2.new(0.5, 0, 1, 0)
+SubFrame1.ZIndex = 2
+
+TextLabel_3.Parent = SubFrame1
+TextLabel_3.AnchorPoint = Vector2.new(0, 0.5)
+TextLabel_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_3.BackgroundTransparency = 1.000
+TextLabel_3.Position = UDim2.new(0.0339098945, 0, 0.5, 0)
+TextLabel_3.Size = UDim2.new(0.678196311, 0, 0.600000024, 0)
+TextLabel_3.ZIndex = 2
+TextLabel_3.Font = Enum.Font.Fantasy
+TextLabel_3.Text = "AutoTrain:"
+TextLabel_3.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_3.TextScaled = true
+TextLabel_3.TextSize = 14.000
+TextLabel_3.TextWrapped = true
+TextLabel_3.TextXAlignment = Enum.TextXAlignment.Left
+
+TextButton.Parent = SubFrame1
+TextButton.AnchorPoint = Vector2.new(0, 0.5)
+TextButton.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+TextButton.Position = UDim2.new(0.699999988, 0, 0.5, 0)
+TextButton.Size = UDim2.new(0.287999988, 0, 0.600000024, 0)
+TextButton.ZIndex = 2
+TextButton.Font = Enum.Font.Fantasy
+TextButton.Text = "Off"
+TextButton.TextColor3 = Color3.fromRGB(255, 0, 0)
+TextButton.TextScaled = true
+TextButton.TextSize = 14.000
+TextButton.TextWrapped = true
+
+SubFrame2.Name = "SubFrame2"
+SubFrame2.Parent = Frame2
+SubFrame2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+SubFrame2.BackgroundTransparency = 1.000
+SubFrame2.Position = UDim2.new(0.5, 0, 0, 0)
+SubFrame2.Size = UDim2.new(0.5, 0, 1, 0)
+SubFrame2.ZIndex = 2
+
+TextButton_2.Parent = SubFrame2
+TextButton_2.AnchorPoint = Vector2.new(0, 0.5)
+TextButton_2.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+TextButton_2.Position = UDim2.new(0.699999988, 0, 0.5, 0)
+TextButton_2.Size = UDim2.new(0.287999988, 0, 0.600000024, 0)
+TextButton_2.ZIndex = 2
+TextButton_2.Font = Enum.Font.Fantasy
+TextButton_2.Text = "Off"
+TextButton_2.TextColor3 = Color3.fromRGB(255, 0, 0)
+TextButton_2.TextScaled = true
+TextButton_2.TextSize = 14.000
+TextButton_2.TextWrapped = true
+
+TextLabel_4.Parent = SubFrame2
+TextLabel_4.AnchorPoint = Vector2.new(0, 0.5)
+TextLabel_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_4.BackgroundTransparency = 1.000
+TextLabel_4.Position = UDim2.new(0.0339098945, 0, 0.5, 0)
+TextLabel_4.Size = UDim2.new(0.678196311, 0, 0.600000024, 0)
+TextLabel_4.ZIndex = 2
+TextLabel_4.Font = Enum.Font.Fantasy
+TextLabel_4.Text = "AutoEquip:"
+TextLabel_4.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_4.TextScaled = true
+TextLabel_4.TextSize = 14.000
+TextLabel_4.TextWrapped = true
+TextLabel_4.TextXAlignment = Enum.TextXAlignment.Left
+
+Frame3.Name = "Frame3"
+Frame3.Parent = HomeFrame
+Frame3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Frame3.BackgroundTransparency = 1.000
+Frame3.LayoutOrder = 3
+Frame3.Size = UDim2.new(0.981999993, 0, 0.086939998, 0)
+Frame3.ZIndex = 2
+
+SubFrame1_2.Name = "SubFrame1"
+SubFrame1_2.Parent = Frame3
+SubFrame1_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+SubFrame1_2.BackgroundTransparency = 1.000
+SubFrame1_2.Size = UDim2.new(0.5, 0, 1, 0)
+SubFrame1_2.ZIndex = 2
+
+TextLabel_5.Parent = SubFrame1_2
+TextLabel_5.AnchorPoint = Vector2.new(0, 0.5)
+TextLabel_5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_5.BackgroundTransparency = 1.000
+TextLabel_5.Position = UDim2.new(0.0339098945, 0, 0.5, 0)
+TextLabel_5.Size = UDim2.new(0.678196311, 0, 0.600000024, 0)
+TextLabel_5.ZIndex = 2
+TextLabel_5.Font = Enum.Font.Fantasy
+TextLabel_5.Text = "NoTS:"
+TextLabel_5.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_5.TextScaled = true
+TextLabel_5.TextSize = 14.000
+TextLabel_5.TextWrapped = true
+TextLabel_5.TextXAlignment = Enum.TextXAlignment.Left
+
+TextButton_3.Parent = SubFrame1_2
+TextButton_3.AnchorPoint = Vector2.new(0, 0.5)
+TextButton_3.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+TextButton_3.Position = UDim2.new(0.699999988, 0, 0.5, 0)
+TextButton_3.Size = UDim2.new(0.287999988, 0, 0.600000024, 0)
+TextButton_3.ZIndex = 2
+TextButton_3.Font = Enum.Font.Fantasy
+TextButton_3.Text = "Off"
+TextButton_3.TextColor3 = Color3.fromRGB(255, 0, 0)
+TextButton_3.TextScaled = true
+TextButton_3.TextSize = 14.000
+TextButton_3.TextWrapped = true
+
+SubFrame2_2.Name = "SubFrame2"
+SubFrame2_2.Parent = Frame3
+SubFrame2_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+SubFrame2_2.BackgroundTransparency = 1.000
+SubFrame2_2.Position = UDim2.new(0.5, 0, 0, 0)
+SubFrame2_2.Size = UDim2.new(0.5, 0, 1, 0)
+SubFrame2_2.ZIndex = 2
+
+TextButton_4.Parent = SubFrame2_2
+TextButton_4.AnchorPoint = Vector2.new(0, 0.5)
+TextButton_4.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+TextButton_4.Position = UDim2.new(0.699999988, 0, 0.5, 0)
+TextButton_4.Size = UDim2.new(0.287999988, 0, 0.600000024, 0)
+TextButton_4.ZIndex = 2
+TextButton_4.Font = Enum.Font.Fantasy
+TextButton_4.Text = "Off"
+TextButton_4.TextColor3 = Color3.fromRGB(255, 0, 0)
+TextButton_4.TextScaled = true
+TextButton_4.TextSize = 14.000
+TextButton_4.TextWrapped = true
+
+TextLabel_6.Parent = SubFrame2_2
+TextLabel_6.AnchorPoint = Vector2.new(0, 0.5)
+TextLabel_6.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_6.BackgroundTransparency = 1.000
+TextLabel_6.Position = UDim2.new(0.0339098945, 0, 0.5, 0)
+TextLabel_6.Size = UDim2.new(0.678196311, 0, 0.600000024, 0)
+TextLabel_6.ZIndex = 2
+TextLabel_6.Font = Enum.Font.Fantasy
+TextLabel_6.Text = "AutoUseAllSword:"
+TextLabel_6.Size = UDim2.new(0.68, 0, 0.6, 0)
+TextLabel_6.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_6.TextScaled = true
+TextLabel_6.TextSize = 14.000
+TextLabel_6.TextWrapped = true
+TextLabel_6.TextXAlignment = Enum.TextXAlignment.Left
+
+Frame4.Name = "Frame4"
+Frame4.Parent = HomeFrame
+Frame4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Frame4.BackgroundTransparency = 1.000
+Frame4.LayoutOrder = 4
+Frame4.Size = UDim2.new(0.981999993, 0, 0.086939998, 0)
+Frame4.ZIndex = 2
+
+SubFrame1_3.Name = "SubFrame1"
+SubFrame1_3.Parent = Frame4
+SubFrame1_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+SubFrame1_3.BackgroundTransparency = 1.000
+SubFrame1_3.Size = UDim2.new(0.5, 0, 1, 0)
+SubFrame1_3.ZIndex = 2
+
+TextLabel_7.Parent = SubFrame1_3
+TextLabel_7.AnchorPoint = Vector2.new(0, 0.5)
+TextLabel_7.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_7.BackgroundTransparency = 1.000
+TextLabel_7.Position = UDim2.new(0.0339098945, 0, 0.5, 0)
+TextLabel_7.Size = UDim2.new(0.678196311, 0, 0.600000024, 0)
+TextLabel_7.ZIndex = 2
+TextLabel_7.Font = Enum.Font.Fantasy
+TextLabel_7.Text = "AutoRespawn:"
+TextLabel_7.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_7.TextScaled = true
+TextLabel_7.TextSize = 14.000
+TextLabel_7.TextWrapped = true
+TextLabel_7.TextXAlignment = Enum.TextXAlignment.Left
+
+TextButton_5.Parent = SubFrame1_3
+TextButton_5.AnchorPoint = Vector2.new(0, 0.5)
+TextButton_5.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+TextButton_5.Position = UDim2.new(0.699999988, 0, 0.5, 0)
+TextButton_5.Size = UDim2.new(0.287999988, 0, 0.600000024, 0)
+TextButton_5.ZIndex = 2
+TextButton_5.Font = Enum.Font.Fantasy
+TextButton_5.Text = "Off"
+TextButton_5.TextColor3 = Color3.fromRGB(255, 0, 0)
+TextButton_5.TextScaled = true
+TextButton_5.TextSize = 14.000
+TextButton_5.TextWrapped = true
+
+SubFrame2_3.Name = "SubFrame2"
+SubFrame2_3.Parent = Frame4
+SubFrame2_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+SubFrame2_3.BackgroundTransparency = 1.000
+SubFrame2_3.Position = UDim2.new(0.5, 0, 0, 0)
+SubFrame2_3.Size = UDim2.new(0.5, 0, 1, 0)
+SubFrame2_3.ZIndex = 2
+
+TextButton_6.Parent = SubFrame2_3
+TextButton_6.AnchorPoint = Vector2.new(0, 0.5)
+TextButton_6.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+TextButton_6.Position = UDim2.new(0.699999988, 0, 0.5, 0)
+TextButton_6.Size = UDim2.new(0.287999988, 0, 0.600000024, 0)
+TextButton_6.ZIndex = 2
+TextButton_6.Font = Enum.Font.Fantasy
+TextButton_6.Text = "Off"
+TextButton_6.TextColor3 = Color3.fromRGB(255, 0, 0)
+TextButton_6.TextScaled = true
+TextButton_6.TextSize = 14.000
+TextButton_6.TextWrapped = true
+
+TextLabel_8.Parent = SubFrame2_3
+TextLabel_8.AnchorPoint = Vector2.new(0, 0.5)
+TextLabel_8.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_8.BackgroundTransparency = 1.000
+TextLabel_8.Position = UDim2.new(0.0339098945, 0, 0.5, 0)
+TextLabel_8.Size = UDim2.new(0.678196311, 0, 0.600000024, 0)
+TextLabel_8.ZIndex = 2
+TextLabel_8.Font = Enum.Font.Fantasy
+TextLabel_8.Text = "AntiAfk:"
+TextLabel_8.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_8.TextScaled = true
+TextLabel_8.TextSize = 14.000
+TextLabel_8.TextWrapped = true
+TextLabel_8.TextXAlignment = Enum.TextXAlignment.Left
+
+Frame5.Name = "Frame5"
+Frame5.Parent = HomeFrame
+Frame5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Frame5.BackgroundTransparency = 1.000
+Frame5.LayoutOrder = 5
+Frame5.Size = UDim2.new(0.981999993, 0, 0.086939998, 0)
+Frame5.ZIndex = 2
+
+SubFrame1_4.Name = "SubFrame1"
+SubFrame1_4.Parent = Frame5
+SubFrame1_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+SubFrame1_4.BackgroundTransparency = 1.000
+SubFrame1_4.Size = UDim2.new(0.5, 0, 1, 0)
+SubFrame1_4.ZIndex = 2
+
+TextLabel_9.Parent = SubFrame1_4
+TextLabel_9.AnchorPoint = Vector2.new(0, 0.5)
+TextLabel_9.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_9.BackgroundTransparency = 1.000
+TextLabel_9.Position = UDim2.new(0.0339098945, 0, 0.5, 0)
+TextLabel_9.Size = UDim2.new(0.678196311, 0, 0.600000024, 0)
+TextLabel_9.ZIndex = 2
+TextLabel_9.Font = Enum.Font.Fantasy
+TextLabel_9.Text = "AHSword:"
+TextLabel_9.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_9.TextScaled = true
+TextLabel_9.TextSize = 14.000
+TextLabel_9.TextWrapped = true
+TextLabel_9.TextXAlignment = Enum.TextXAlignment.Left
+
+TextButton_7.Parent = SubFrame1_4
+TextButton_7.AnchorPoint = Vector2.new(0, 0.5)
+TextButton_7.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+TextButton_7.Position = UDim2.new(0.699999988, 0, 0.5, 0)
+TextButton_7.Size = UDim2.new(0.287999988, 0, 0.600000024, 0)
+TextButton_7.ZIndex = 2
+TextButton_7.Font = Enum.Font.Fantasy
+TextButton_7.Text = "Off"
+TextButton_7.TextColor3 = Color3.fromRGB(255, 0, 0)
+TextButton_7.TextScaled = true
+TextButton_7.TextSize = 14.000
+TextButton_7.TextWrapped = true
+
+SubFrame2_4.Name = "SubFrame2"
+SubFrame2_4.Parent = Frame5
+SubFrame2_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+SubFrame2_4.BackgroundTransparency = 1.000
+SubFrame2_4.Position = UDim2.new(0.5, 0, 0, 0)
+SubFrame2_4.Size = UDim2.new(0.5, 0, 1, 0)
+SubFrame2_4.ZIndex = 2
+
+TextButton_8.Parent = SubFrame2_4
+TextButton_8.AnchorPoint = Vector2.new(0, 0.5)
+TextButton_8.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+TextButton_8.Position = UDim2.new(0.699999988, 0, 0.5, 0)
+TextButton_8.Size = UDim2.new(0.287999988, 0, 0.600000024, 0)
+TextButton_8.ZIndex = 2
+TextButton_8.Font = Enum.Font.Fantasy
+TextButton_8.Text = "Off"
+TextButton_8.TextColor3 = Color3.fromRGB(255, 0, 0)
+TextButton_8.TextScaled = true
+TextButton_8.TextSize = 14.000
+TextButton_8.TextWrapped = true
+
+TextLabel_10.Parent = SubFrame2_4
+TextLabel_10.AnchorPoint = Vector2.new(0, 0.5)
+TextLabel_10.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_10.BackgroundTransparency = 1.000
+TextLabel_10.Position = UDim2.new(0.0339098945, 0, 0.5, 0)
+TextLabel_10.Size = UDim2.new(0.678196311, 0, 0.600000024, 0)
+TextLabel_10.ZIndex = 2
+TextLabel_10.Font = Enum.Font.Fantasy
+TextLabel_10.Text = "ShadCom:"
+TextLabel_10.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_10.TextScaled = true
+TextLabel_10.TextSize = 14.000
+TextLabel_10.TextWrapped = true
+TextLabel_10.TextXAlignment = Enum.TextXAlignment.Left
+
+Frame6.Name = "Frame6"
+Frame6.Parent = HomeFrame
+Frame6.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Frame6.BackgroundTransparency = 1.000
+Frame6.LayoutOrder = 6
+Frame6.Size = UDim2.new(0.981999993, 0, 0.086939998, 0)
+Frame6.ZIndex = 2
+
+SubFrame1_5.Name = "SubFrame1"
+SubFrame1_5.Parent = Frame6
+SubFrame1_5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+SubFrame1_5.BackgroundTransparency = 1.000
+SubFrame1_5.Size = UDim2.new(0.5, 0, 1, 0)
+SubFrame1_5.ZIndex = 2
+
+TextLabel_11.Parent = SubFrame1_5
+TextLabel_11.AnchorPoint = Vector2.new(0, 0.5)
+TextLabel_11.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_11.BackgroundTransparency = 1.000
+TextLabel_11.Position = UDim2.new(0.0339098945, 0, 0.5, 0)
+TextLabel_11.Size = UDim2.new(0.678196311, 0, 0.600000024, 0)
+TextLabel_11.ZIndex = 2
+TextLabel_11.Font = Enum.Font.Fantasy
+TextLabel_11.Text = "NoFF:"
+TextLabel_11.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_11.TextScaled = true
+TextLabel_11.TextSize = 14.000
+TextLabel_11.TextWrapped = true
+TextLabel_11.TextXAlignment = Enum.TextXAlignment.Left
+
+TextButton_9.Parent = SubFrame1_5
+TextButton_9.AnchorPoint = Vector2.new(0, 0.5)
+TextButton_9.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+TextButton_9.Position = UDim2.new(0.699999988, 0, 0.5, 0)
+TextButton_9.Size = UDim2.new(0.287999988, 0, 0.600000024, 0)
+TextButton_9.ZIndex = 2
+TextButton_9.Font = Enum.Font.Fantasy
+TextButton_9.Text = "Off"
+TextButton_9.TextColor3 = Color3.fromRGB(255, 0, 0)
+TextButton_9.TextScaled = true
+TextButton_9.TextSize = 14.000
+TextButton_9.TextWrapped = true
+
+SubFrame2_5.Name = "SubFrame2"
+SubFrame2_5.Parent = Frame6
+SubFrame2_5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+SubFrame2_5.BackgroundTransparency = 1.000
+SubFrame2_5.Position = UDim2.new(0.5, 0, 0, 0)
+SubFrame2_5.Size = UDim2.new(0.5, 0, 1, 0)
+SubFrame2_5.ZIndex = 2
+
+TextButton_10.Parent = SubFrame2_5
+TextButton_10.AnchorPoint = Vector2.new(0, 0.5)
+TextButton_10.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+TextButton_10.Position = UDim2.new(0.699999988, 0, 0.5, 0)
+TextButton_10.Size = UDim2.new(0.287999988, 0, 0.600000024, 0)
+TextButton_10.ZIndex = 2
+TextButton_10.Font = Enum.Font.Fantasy
+TextButton_10.Text = "Off"
+TextButton_10.TextColor3 = Color3.fromRGB(255, 0, 0)
+TextButton_10.TextScaled = true
+TextButton_10.TextSize = 14.000
+TextButton_10.TextWrapped = true
+
+TextLabel_12.Parent = SubFrame2_5
+TextLabel_12.AnchorPoint = Vector2.new(0, 0.5)
+TextLabel_12.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_12.BackgroundTransparency = 1.000
+TextLabel_12.Position = UDim2.new(0.0339098945, 0, 0.5, 0)
+TextLabel_12.Size = UDim2.new(0.678196311, 0, 0.600000024, 0)
+TextLabel_12.ZIndex = 2
+TextLabel_12.Font = Enum.Font.Fantasy
+TextLabel_12.Text = "Clone xCustom:"
+TextLabel_12.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_12.TextScaled = true
+TextLabel_12.TextSize = 14.000
+TextLabel_12.TextWrapped = true
+TextLabel_12.TextXAlignment = Enum.TextXAlignment.Left
+
+Frame7.Name = "Frame7"
+Frame7.Parent = HomeFrame
+Frame7.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Frame7.BackgroundTransparency = 1.000
+Frame7.LayoutOrder = 7
+Frame7.Size = UDim2.new(0.981999993, 0, 0.086939998, 0)
+Frame7.ZIndex = 2
+
+SubFrame1_6.Name = "SubFrame1"
+SubFrame1_6.Parent = Frame7
+SubFrame1_6.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+SubFrame1_6.BackgroundTransparency = 1.000
+SubFrame1_6.Size = UDim2.new(0.5, 0, 1, 0)
+SubFrame1_6.ZIndex = 2
+
+TextLabel_13.Parent = SubFrame1_6
+TextLabel_13.AnchorPoint = Vector2.new(0, 0.5)
+TextLabel_13.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_13.BackgroundTransparency = 1.000
+TextLabel_13.Position = UDim2.new(0.0339095443, 0, 0.5, 0)
+TextLabel_13.Size = UDim2.new(0.666090369, 0, 0.600000024, 0)
+TextLabel_13.ZIndex = 2
+TextLabel_13.Font = Enum.Font.Fantasy
+TextLabel_13.Text = "TrainRate:"
+TextLabel_13.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_13.TextScaled = true
+TextLabel_13.TextSize = 14.000
+TextLabel_13.TextWrapped = true
+TextLabel_13.TextXAlignment = Enum.TextXAlignment.Left
+
+TextButton_11.Name = "TextButton"
+TextButton_11.Parent = SubFrame1_6
+TextButton_11.AnchorPoint = Vector2.new(0, 0.5)
+TextButton_11.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_11.BackgroundTransparency = 0.600
+TextButton_11.BorderSizePixel = 2
+TextButton_11.Position = UDim2.new(0.699999988, 0, 0.5, 0)
+TextButton_11.Size = UDim2.new(0.287999988, 0, 0.600000024, 0)
+TextButton_11.ZIndex = 2
+TextButton_11.ClearTextOnFocus = false
+TextButton_11.Font = Enum.Font.Fantasy
+TextButton_11.Text = "0.7"
+TextButton_11.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_11.TextScaled = true
+TextButton_11.TextSize = 14.000
+TextButton_11.TextWrapped = true
+
+SubFrame2_6.Name = "SubFrame2"
+SubFrame2_6.Parent = Frame7
+SubFrame2_6.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+SubFrame2_6.BackgroundTransparency = 1.000
+SubFrame2_6.Position = UDim2.new(0.5, 0, 0, 0)
+SubFrame2_6.Size = UDim2.new(0.5, 0, 1, 0)
+SubFrame2_6.ZIndex = 2
+
+TextButton_12.Name = "TextButton"
+TextButton_12.Parent = SubFrame2_6
+TextButton_12.AnchorPoint = Vector2.new(0, 0.5)
+TextButton_12.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_12.BackgroundTransparency = 0.600
+TextButton_12.BorderSizePixel = 2
+TextButton_12.Position = UDim2.new(0.699999988, 0, 0.5, 0)
+TextButton_12.Size = UDim2.new(0.287999988, 0, 0.600000024, 0)
+TextButton_12.ZIndex = 2
+TextButton_12.ClearTextOnFocus = false
+TextButton_12.Font = Enum.Font.Fantasy
+TextButton_12.Text = "20"
+TextButton_12.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_12.TextScaled = true
+TextButton_12.TextSize = 14.000
+TextButton_12.TextWrapped = true
+
+TextLabel_14.Parent = SubFrame2_6
+TextLabel_14.AnchorPoint = Vector2.new(0, 0.5)
+TextLabel_14.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_14.BackgroundTransparency = 1.000
+TextLabel_14.Position = UDim2.new(0.0339095443, 0, 0.5, 0)
+TextLabel_14.Size = UDim2.new(0.666090369, 0, 0.600000024, 0)
+TextLabel_14.ZIndex = 2
+TextLabel_14.Font = Enum.Font.Fantasy
+TextLabel_14.Text = "TrainAmount:"
+TextLabel_14.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_14.TextScaled = true
+TextLabel_14.TextSize = 14.000
+TextLabel_14.TextWrapped = true
+TextLabel_14.TextXAlignment = Enum.TextXAlignment.Left
+
+Frame8.Name = "Frame8"
+Frame8.Parent = HomeFrame
+Frame8.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Frame8.BackgroundTransparency = 1.000
+Frame8.LayoutOrder = 8
+Frame8.Size = UDim2.new(0.981999993, 0, 0.086939998, 0)
+Frame8.ZIndex = 2
+
+SubFrame1_7.Name = "SubFrame1"
+SubFrame1_7.Parent = Frame8
+SubFrame1_7.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+SubFrame1_7.BackgroundTransparency = 1.000
+SubFrame1_7.Size = UDim2.new(0.5, 0, 1, 0)
+SubFrame1_7.ZIndex = 2
+
+TextLabel_15.Parent = SubFrame1_7
+TextLabel_15.AnchorPoint = Vector2.new(0, 0.5)
+TextLabel_15.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_15.BackgroundTransparency = 1.000
+TextLabel_15.Position = UDim2.new(0.0339098945, 0, 0.5, 0)
+TextLabel_15.Size = UDim2.new(0.678196311, 0, 0.600000024, 0)
+TextLabel_15.ZIndex = 2
+TextLabel_15.Font = Enum.Font.Fantasy
+TextLabel_15.Text = "Ninjutsu:"
+TextLabel_15.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_15.TextScaled = true
+TextLabel_15.TextSize = 14.000
+TextLabel_15.TextWrapped = true
+TextLabel_15.TextXAlignment = Enum.TextXAlignment.Left
+
+SubFrame2_7.Name = "SubFrame2"
+SubFrame2_7.Parent = Frame8
+SubFrame2_7.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+SubFrame2_7.BackgroundTransparency = 1.000
+SubFrame2_7.Position = UDim2.new(0.5, 0, 0, 0)
+SubFrame2_7.Size = UDim2.new(0.5, 0, 1, 0)
+SubFrame2_7.ZIndex = 2
+
+TextLabel_16.Parent = SubFrame2_7
+TextLabel_16.AnchorPoint = Vector2.new(1, 0.5)
+TextLabel_16.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_16.BackgroundTransparency = 1.000
+TextLabel_16.Position = UDim2.new(0.989999771, 0, 0.499999583, 0)
+TextLabel_16.Size = UDim2.new(1.27789295, 0, 0.600000024, 0)
+TextLabel_16.ZIndex = 2
+TextLabel_16.Font = Enum.Font.Fantasy
+TextLabel_16.Text = "629,247,950"
+TextLabel_16.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_16.TextScaled = true
+TextLabel_16.TextSize = 14.000
+TextLabel_16.TextWrapped = true
+TextLabel_16.TextXAlignment = Enum.TextXAlignment.Right
+
+Frame9.Name = "Frame9"
+Frame9.Parent = HomeFrame
+Frame9.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Frame9.BackgroundTransparency = 1.000
+Frame9.LayoutOrder = 9
+Frame9.Size = UDim2.new(0.981999993, 0, 0.086939998, 0)
+Frame9.ZIndex = 2
+
+SubFrame1_8.Name = "SubFrame1"
+SubFrame1_8.Parent = Frame9
+SubFrame1_8.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+SubFrame1_8.BackgroundTransparency = 1.000
+SubFrame1_8.Size = UDim2.new(0.5, 0, 1, 0)
+SubFrame1_8.ZIndex = 2
+
+TextLabel_17.Parent = SubFrame1_8
+TextLabel_17.AnchorPoint = Vector2.new(0, 0.5)
+TextLabel_17.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_17.BackgroundTransparency = 1.000
+TextLabel_17.Position = UDim2.new(0.0339098945, 0, 0.5, 0)
+TextLabel_17.Size = UDim2.new(0.678196311, 0, 0.600000024, 0)
+TextLabel_17.ZIndex = 2
+TextLabel_17.Font = Enum.Font.Fantasy
+TextLabel_17.Text = "Reputation:"
+TextLabel_17.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_17.TextScaled = true
+TextLabel_17.TextSize = 14.000
+TextLabel_17.TextWrapped = true
+TextLabel_17.TextXAlignment = Enum.TextXAlignment.Left
+
+SubFrame2_8.Name = "SubFrame2"
+SubFrame2_8.Parent = Frame9
+SubFrame2_8.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+SubFrame2_8.BackgroundTransparency = 1.000
+SubFrame2_8.Position = UDim2.new(0.5, 0, 0, 0)
+SubFrame2_8.Size = UDim2.new(0.5, 0, 1, 0)
+SubFrame2_8.ZIndex = 2
+
+TextLabel_18.Parent = SubFrame2_8
+TextLabel_18.AnchorPoint = Vector2.new(1, 0.5)
+TextLabel_18.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_18.BackgroundTransparency = 1.000
+TextLabel_18.Position = UDim2.new(0.989999771, 0, 0.499999583, 0)
+TextLabel_18.Size = UDim2.new(1.27789295, 0, 0.600000024, 0)
+TextLabel_18.ZIndex = 2
+TextLabel_18.Font = Enum.Font.Fantasy
+TextLabel_18.Text = "1,000,000,000,000,000,000"
+TextLabel_18.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_18.TextScaled = true
+TextLabel_18.TextSize = 14.000
+TextLabel_18.TextWrapped = true
+TextLabel_18.TextXAlignment = Enum.TextXAlignment.Right
+
+Frame10.Name = "Frame10"
+Frame10.Parent = HomeFrame
+Frame10.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Frame10.BackgroundTransparency = 1.000
+Frame10.LayoutOrder = 10
+Frame10.Size = UDim2.new(0.981999993, 0, 0.086939998, 0)
+Frame10.ZIndex = 2
+
+SubFrame1_9.Name = "SubFrame1"
+SubFrame1_9.Parent = Frame10
+SubFrame1_9.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+SubFrame1_9.BackgroundTransparency = 1.000
+SubFrame1_9.Size = UDim2.new(0.5, 0, 1, 0)
+SubFrame1_9.ZIndex = 2
+
+TextLabel_19.Parent = SubFrame1_9
+TextLabel_19.AnchorPoint = Vector2.new(0, 0.5)
+TextLabel_19.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_19.BackgroundTransparency = 1.000
+TextLabel_19.Position = UDim2.new(0.0339098945, 0, 0.5, 0)
+TextLabel_19.Size = UDim2.new(0.678196311, 0, 0.600000024, 0)
+TextLabel_19.ZIndex = 2
+TextLabel_19.Font = Enum.Font.Fantasy
+TextLabel_19.Text = "ServerTime:"
+TextLabel_19.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_19.TextScaled = true
+TextLabel_19.TextSize = 14.000
+TextLabel_19.TextWrapped = true
+TextLabel_19.TextXAlignment = Enum.TextXAlignment.Left
+
+SubFrame2_9.Name = "SubFrame2"
+SubFrame2_9.Parent = Frame10
+SubFrame2_9.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+SubFrame2_9.BackgroundTransparency = 1.000
+SubFrame2_9.Position = UDim2.new(0.5, 0, 0, 0)
+SubFrame2_9.Size = UDim2.new(0.5, 0, 1, 0)
+SubFrame2_9.ZIndex = 2
+
+TextLabel_20.Parent = SubFrame2_9
+TextLabel_20.AnchorPoint = Vector2.new(1, 0.5)
+TextLabel_20.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_20.BackgroundTransparency = 1.000
+TextLabel_20.Position = UDim2.new(0.989999771, 0, 0.499999583, 0)
+TextLabel_20.Size = UDim2.new(1.27789295, 0, 0.600000024, 0)
+TextLabel_20.ZIndex = 2
+TextLabel_20.Font = Enum.Font.Fantasy
+TextLabel_20.Text = "00:00:00"
+TextLabel_20.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_20.TextScaled = true
+TextLabel_20.TextSize = 14.000
+TextLabel_20.TextWrapped = true
+TextLabel_20.TextXAlignment = Enum.TextXAlignment.Right
+
+Frame11.Name = "Frame11"
+Frame11.Parent = HomeFrame
+Frame11.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Frame11.BackgroundTransparency = 1.000
+Frame11.LayoutOrder = 11
+Frame11.Size = UDim2.new(0.981999993, 0, 0.086939998, 0)
+Frame11.ZIndex = 2
+
+SubFrame1_10.Name = "SubFrame1"
+SubFrame1_10.Parent = Frame11
+SubFrame1_10.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+SubFrame1_10.BackgroundTransparency = 1.000
+SubFrame1_10.Size = UDim2.new(0.5, 0, 1, 0)
+SubFrame1_10.ZIndex = 2
+
+TextLabel_21.Parent = SubFrame1_10
+TextLabel_21.AnchorPoint = Vector2.new(0, 0.5)
+TextLabel_21.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_21.BackgroundTransparency = 1.000
+TextLabel_21.Position = UDim2.new(0.0339098945, 0, 0.5, 0)
+TextLabel_21.Size = UDim2.new(0.678196311, 0, 0.600000024, 0)
+TextLabel_21.ZIndex = 2
+TextLabel_21.Font = Enum.Font.Fantasy
+TextLabel_21.Text = "TotalTime:"
+TextLabel_21.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_21.TextScaled = true
+TextLabel_21.TextSize = 14.000
+TextLabel_21.TextWrapped = true
+TextLabel_21.TextXAlignment = Enum.TextXAlignment.Left
+
+SubFrame2_10.Name = "SubFrame2"
+SubFrame2_10.Parent = Frame11
+SubFrame2_10.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+SubFrame2_10.BackgroundTransparency = 1.000
+SubFrame2_10.Position = UDim2.new(0.5, 0, 0, 0)
+SubFrame2_10.Size = UDim2.new(0.5, 0, 1, 0)
+SubFrame2_10.ZIndex = 2
+
+TextLabel_22.Parent = SubFrame2_10
+TextLabel_22.AnchorPoint = Vector2.new(1, 0.5)
+TextLabel_22.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_22.BackgroundTransparency = 1.000
+TextLabel_22.Position = UDim2.new(0.989999771, 0, 0.499999583, 0)
+TextLabel_22.Size = UDim2.new(1.27789295, 0, 0.600000024, 0)
+TextLabel_22.ZIndex = 2
+TextLabel_22.Font = Enum.Font.Fantasy
+TextLabel_22.Text = "00:00:00"
+TextLabel_22.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_22.TextScaled = true
+TextLabel_22.TextSize = 14.000
+TextLabel_22.TextWrapped = true
+TextLabel_22.TextXAlignment = Enum.TextXAlignment.Right
+
+Frame0.Name = "Frame0"
+Frame0.Parent = HomeFrame
+Frame0.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Frame0.BackgroundTransparency = 1.000
+Frame0.Position = UDim2.new(1.7801031e-07, 0, 0, 0)
+Frame0.Size = UDim2.new(0.981999934, 0, 0.0177947488, 0)
+Frame0.ZIndex = 3
+
+UIAspectRatioConstraint.Parent = AdminFrame
+UIAspectRatioConstraint.AspectRatio = 0.862
+
+AdminImgBtn.Name = "AdminImgBtn"
+AdminImgBtn.Parent = ShadowHub
+AdminImgBtn.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+AdminImgBtn.BackgroundTransparency = 1.000
+AdminImgBtn.Position = UDim2.new(0.889729738, 0, 0.699999988, 0)
+AdminImgBtn.Size = UDim2.new(0.109999999, 0, 0.0790000036, 0)
+AdminImgBtn.Selected = true
+AdminImgBtn.Image = "rbxassetid://10563016738"
+
+
+
+
+-- SHADCOM controls embedded in the ORIGINAL Shadow Hub panel.
+-- The separate classic SHADCOM GUI is preserved below.
+local hubCloneCount = 20
+local hubCloneInput = Instance.new("TextBox")
+hubCloneInput.Name = "CloneAmountInput"
+hubCloneInput.Parent = SubFrame2_5
+hubCloneInput.AnchorPoint = Vector2.new(0, 0.5)
+hubCloneInput.Position = UDim2.new(0.48, 0, 0.5, 0)
+hubCloneInput.Size = UDim2.new(0.20, 0, 0.6, 0)
+hubCloneInput.BackgroundColor3 = Color3.fromRGB(68, 68, 68)
+hubCloneInput.TextColor3 = Color3.new(1, 1, 1)
+hubCloneInput.Font = Enum.Font.Fantasy
+hubCloneInput.TextScaled = true
+hubCloneInput.Text = "20"
+hubCloneInput.ClearTextOnFocus = false
+hubCloneInput.PlaceholderText = "Count"
+TextLabel_12.Size = UDim2.new(0.45, 0, 0.6, 0)
+TextButton_10.Name = "CloneNow"
+TextButton_10.Text = "Clone"
+TextButton_10.TextColor3 = Color3.fromRGB(0, 200, 255)
+
+hubCloneInput.FocusLost:Connect(function()
+    local count = tonumber(hubCloneInput.Text)
+    if count and count >= 1 and count < math.huge and count == math.floor(count) then
+        hubCloneCount = count
+    else
+        hubCloneInput.Text = tostring(hubCloneCount)
+    end
+end)
+TextButton_10.MouseButton1Click:Connect(function()
+    local count = tonumber(hubCloneInput.Text)
+    if count and count >= 1 and count < math.huge and count == math.floor(count) then
+        hubCloneCount = count
+    else
+        hubCloneInput.Text = tostring(hubCloneCount)
+        return
+    end
+    local folder = game:GetService("ReplicatedStorage"):FindFirstChild("RemoteEvent")
+    local remote = folder and folder:FindFirstChild("SpawnCharacterEvent")
+    if not remote or not remote:IsA("RemoteEvent") then
+        warn("Shadow Hub: SpawnCharacterEvent unavailable")
+        return
+    end
+    task.spawn(function()
+        for i = 1, hubCloneCount do
+            pcall(function() remote:FireServer("MainSpawn") end)
+            if i % 10 == 0 then task.wait() end
+        end
+    end)
+end)
+
+local Players = game:GetService("Players")
+local UserInputService = game:GetService("UserInputService")
+local Player = Players.LocalPlayer
+local Character = Players.LocalPlayer.Character or Players.LocalPlayer.CharacterAdded:Wait()
+local RunService = game:GetService("RunService")
+local filename = "Ninja Hub v4.1.0 Settings.txt"
+local Main = ShadowHub
+local FunctionTable = {}
+local totalTime = 0
+local sessionNin = 0
+local lastVal = game.Players.LocalPlayer.leaderstats.Ninjutsu.Value
+local charrespawning = false
+local respos = nil
+local VariableTable = {
+    ['AutoTrain'] = false;
+    ['AutoEquip'] = false;
+    ['AutoUseAllSword'] = false;
+    ['NoTS'] = false;
+    ['AutoRespawn'] = false;
+    ['AntiAfk'] = false;
+    ['AHSword'] = false;
+    ['ShadCom'] = false;
+    ['NoFF'] = false;
+
+    ['TrainRate'] = 0.7;
+    ['TrainAmount'] = 20;
+}
+
+
+
+FunctionTable['comma_value'] = function(n)
+    if tonumber(n) then
+    	local left,num,right = string.match(n,'^([^%d]*%d)(%d*)(.-)$')
+    	return left..(num:reverse():gsub('(%d%d%d)','%1,'):reverse())..right
+    else
+        return n
+    end
+end
+
+FunctionTable['format'] = function(val)
+    local suffixes = {'','K+','M+','B+','T+','qd+','Qn+','sx+','Sp+','O+','N+','de+','Ud+','DD+','tdD+','qdD+','QnD+','sxD+','SpD+','OcD+','NvD+','Vgn+','UVg+','DVg+','TVg+','qtV+','QnV+','SeV+','SPG+','OVG+','NVG+','TGN+','UTG+','DTG+','tsTG+','qtTG+','QnTG+','ssTG+','SpTG+','OcTG+','NoAG+','UnAG+','DuAG+','TeAG+','QdAG+','QnAG+','SxAG+','SpAG+','OcAG+','NvAG+','CT+'}
+    for i=1, #suffixes do
+		if tonumber(val) < 10^(i*3) then
+			return math.floor(val/((10^((i-1)*3))/100))/(100)..suffixes[i]
+		end
+	end
+end
+
+FunctionTable['TimeFormat'] = function(Int)
+    return string.format("%02i", Int)
+end
+
+FunctionTable['ConvertToDHM'] = function(value)
+    local minutes = math.floor(value / 60)
+    local hours = math.floor((value / 60) / 60)
+    local days = math.floor(((value / 60) / 60) / 24)
+    minutes = minutes - (hours * 60)
+    hours = hours - (days * 24)
+	return FunctionTable['TimeFormat'](days)..":"..FunctionTable['TimeFormat'](hours)..":"..FunctionTable['TimeFormat'](minutes)
+end
+
+FunctionTable['CreateTween'] = function(object,info,args,play,destroyfunc)
+    local tween = game:GetService("TweenService"):Create(object, info, args)
+	if play == "NoWait" or play == true then
+		tween:Play()
+		tween.Completed:Connect(function()
+			tween:Destroy()
+            if destroyfunc then
+                destroyfunc()
+            end
+		end)
+		return
+	elseif play == "Wait" then
+		tween:Play()
+		tween.Completed:Wait()
+		tween:Destroy()
+		return
+	end
+	return tween
+end
+
+FunctionTable['getroot'] = function(char)
+    local rootPart = char:FindFirstChild('HumanoidRootPart') or char:FindFirstChild('Torso') or char:FindFirstChild('UpperTorso')
+    return rootPart
+end
+
+FunctionTable['SetButton'] = function(bool)
+    if bool == true then
+        local ButtonTab = {Color3.fromRGB(0,255,0),"On"}
+        return ButtonTab
+    elseif bool == false then
+        local ButtonTab = {Color3.fromRGB(255,0,0),"Off"}
+        return ButtonTab
+    end
+end
+
+FunctionTable['FindButton'] = function(text)
+    for i,v in pairs(Main.AdminFrame.MidBar.MainFrame:GetDescendants()) do
+        if v:IsA("TextButton") or v:IsA("TextBox") then
+            if v.Name == "TextButton" or v.Name == "TextBox" then
+                if v.Parent:FindFirstChild("TextLabel") then
+                    local TextLabel = string.sub(v.Parent:FindFirstChild("TextLabel").Text,1,string.len(v.Parent:FindFirstChild("TextLabel").Text) - 1)
+                    if TextLabel == text then
+                        return v
+                    end
+                end
+            end
+        end
+    end
+    return nil
+end
+
+FunctionTable.VariableFunctions = {
+    ['AutoTrain'] = function()
+        if VariableTable['AutoTrain'] == true then
+            task.spawn(function()
+                while VariableTable['AutoTrain'] == true do
+                    game:GetService("ReplicatedStorage").RemoteEvent.AddPowerEvent:FireServer("FromTraining",VariableTable['TrainAmount'])
+                    task.wait(VariableTable['TrainRate'])
+                    game:GetService("ReplicatedStorage").RemoteEvent.AddPowerEvent:FireServer("FromTraining",VariableTable['TrainAmount'] - 0.001)
+                    task.wait(VariableTable['TrainRate'])
+                end
+            end)
+        end
+    end;
+    ['AutoEquip'] = function()
+        if VariableTable['AutoEquip'] == true then
+            task.spawn(function()
+                while VariableTable['AutoEquip'] == true do
+                    if Players.LocalPlayer.Character and charrespawning == false then
+                        if not Players.LocalPlayer.Character:FindFirstChild("Train") then
+                            if Players.LocalPlayer.Backpack:FindFirstChild("Train") then
+                                Players.LocalPlayer.Backpack:FindFirstChild("Train").Parent = Players.LocalPlayer.Character
+                            end
+                        end
+                    end
+                    task.wait()
+                end
+            end)
+        end
+    end;
+    ['NoTS'] = function()
+        if VariableTable['NoTS'] == true then
+            if Players.LocalPlayer.Character then
+                if Players.LocalPlayer.Character:FindFirstChild("Train") and Players.LocalPlayer.Character:FindFirstChild("Humanoid") then
+                    Players.LocalPlayer.Character:FindFirstChild("Humanoid"):UnequipTools()
+                end
+            end
+            if Players.LocalPlayer:FindFirstChild("Backpack") and Players.LocalPlayer:FindFirstChild("Backpack"):FindFirstChild("Train") then
+                for i,v in pairs(Players.LocalPlayer:FindFirstChild("Backpack"):FindFirstChild("Train"):GetDescendants()) do
+                    if v.Name ~= "Handle" and v.Name ~= "ValueCheck" then
+                        v:Destroy()
+                    elseif v.Name == "Handle" then
+                        v.Transparency = 1
+                    end
+                end
+            end
+        elseif VariableTable['NoTS'] == false then
+            if Players.LocalPlayer.Character and Players.LocalPlayer.Character:FindFirstChild("Humanoid") then
+                Players.LocalPlayer.Character:FindFirstChild("Humanoid").Health = 0
+            end
+        end
+    end;
+    ['AutoUseAllSword'] = function()
+        if VariableTable['AutoUseAllSword'] then
+            local character = Players.LocalPlayer.Character
+            local backpack = Players.LocalPlayer:FindFirstChild("Backpack")
+            if character and backpack then
+                task.spawn(function()
+                    for _, tool in ipairs(backpack:GetChildren()) do
+                        if tool:IsA("Tool") and tool.Name:lower():find("sword") then
+                            tool.Parent = character
+                            task.wait()
+                        end
+                    end
+                end)
+            end
+        end
+    end;
+    ['AutoRespawn'] = function()
+        if VariableTable['AutoRespawn'] == false then
+            respos = nil
+        end
+    end;
+    ['AntiAfk'] = function()
+        Players.LocalPlayer.Idled:Connect(function()
+            if VariableTable['AntiAfk'] == true then
+                local VirtualUser = game:GetService("VirtualUser")
+                VirtualUser:CaptureController()
+                VirtualUser:ClickButton2(Vector2.new())
+            end
+        end)
+    end;
+    ['AHSword'] = function()
+        -- The worker is started once; toggling off stops firing events.
+        if VariableTable['AHSword'] and not FunctionTable._hubAHRunning then
+            FunctionTable._hubAHRunning = true
+            task.spawn(function()
+                while VariableTable['AHSword'] do
+                    local char = Players.LocalPlayer.Character
+                    if char then
+                        for _, tool in ipairs(char:GetChildren()) do
+                            if tool:IsA("Tool") then
+                                local hit = tool:FindFirstChild("HitEvent")
+                                if hit and hit:IsA("RemoteEvent") then
+                                    pcall(function() hit:FireServer() end)
+                                end
+                            end
+                        end
+                    end
+                    task.wait()
+                end
+                FunctionTable._hubAHRunning = false
+            end)
+        end
+    end;
+    ['ShadCom'] = function()
+        -- Opens/closes the separate ShadowCombat GUI without changing its contents.
+        local shadowGui = game:GetService("CoreGui"):FindFirstChild("ShadowCombat")
+
+        if not shadowGui then
+            local playerGui = Players.LocalPlayer:FindFirstChild("PlayerGui")
+            if playerGui then
+                shadowGui = playerGui:FindFirstChild("ShadowCombat")
+            end
+        end
+
+        if not shadowGui then
+            warn("ShadCom GUI was not found. Run the ShadowCombat script first.")
+            return
+        end
+
+        local shadowFrame = shadowGui:FindFirstChild("MainFrame", true)
+            or shadowGui:FindFirstChild("Frame", true)
+
+        if shadowFrame and shadowFrame:IsA("GuiObject") then
+            shadowFrame.Visible = (VariableTable['ShadCom'] == true)
+        elseif shadowGui:IsA("ScreenGui") then
+            shadowGui.Enabled = (VariableTable['ShadCom'] == true)
+        end
+    end;
+    ['NoFF'] = function()
+        if VariableTable['NoFF'] == true then
+            coroutine.resume(coroutine.create(function()
+                local weapon = 1
+                while VariableTable['NoFF'] == true do
+                    if Players.LocalPlayer.Character and Players.LocalPlayer.Character:FindFirstChildWhichIsA("ForceField") and charrespawning == false then
+                        if weapon == 1 and Players.LocalPlayer.Backpack:FindFirstChild("Sword") then
+                            Players.LocalPlayer.Backpack:FindFirstChild("Sword").Parent = Players.LocalPlayer.Character
+                            wait()
+                            if Players.LocalPlayer.Character:FindFirstChild("Sword") then
+                                Players.LocalPlayer.Character:FindFirstChild("Sword").Parent = Players.LocalPlayer.Backpack
+                            end
+                            weapon = 2
+                        elseif weapon == 2 and Players.LocalPlayer.Backpack:FindFirstChild("Shuriken") then
+                            Players.LocalPlayer.Backpack:FindFirstChild("Shuriken").Parent = Players.LocalPlayer.Character
+                            wait()
+                            if Players.LocalPlayer.Character:FindFirstChild("Shuriken") then
+                                Players.LocalPlayer.Character:FindFirstChild("Shuriken").Parent = Players.LocalPlayer.Backpack
+                            end
+                            weapon = 1
+                        end
+                    end
+                    task.wait()
+                end
+            end))
+        end
+    end;
+
+}
+
+FunctionTable['SaveSettings'] = function()
+    local httpservice = game:GetService("HttpService")
+    if (writefile) then
+        local Settings = {}
+        Settings.VariableTable = VariableTable
+        Settings.TotalTime = totalTime + workspace.DistributedGameTime
+        writefile(filename,httpservice:JSONEncode(Settings))
+    end
+end
+
+FunctionTable['MasterFunc'] = function(Text,UIElement,Save,Loading)
+    if Save == nil then
+        Save = true
+    end
+    if Loading == nil then
+        Loading = false
+    end
+    if UIElement:IsA("TextButton") then
+        if VariableTable[Text] ~= nil and Loading ~= true then
+            VariableTable[Text] = not VariableTable[Text]
+        end
+        local ButtonTable = FunctionTable['SetButton'](VariableTable[Text])
+        UIElement.TextColor3 = ButtonTable[1]
+        UIElement.Text = ButtonTable[2]
+    elseif UIElement:IsA("TextBox") then
+        if tonumber(UIElement.Text) then
+            VariableTable[Text] = tonumber(UIElement.Text)
+        else
+            VariableTable[Text] = UIElement.Text
+        end
+    end
+    if Save then
+        FunctionTable['SaveSettings']()
+    end
+    if FunctionTable.VariableFunctions[Text] then
+        FunctionTable.VariableFunctions[Text]()
+    end
+end
+
+FunctionTable['HumDied'] = function()
+    if VariableTable['AutoRespawn'] == true then
+        charrespawning = true
+        respos = Player.Character:FindFirstChild("HumanoidRootPart").CFrame
+        local mainspawn = Player.PlayerGui:FindFirstChild("FirstScreenGui").MainSpawnBtn
+        local randomspawn = Player.PlayerGui:FindFirstChild("FirstScreenGui").RandomSpawnBtn
+        game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):WaitForChild("SpawnCharacterEvent"):FireServer("MainSpawn")
+        game:GetService("Lighting"):WaitForChild("Blur").Size = 0
+        game:GetService("Lighting"):WaitForChild("Blur").Enabled = false
+        mainspawn.TextTransparency = 1
+        mainspawn.BackgroundTransparency = 1
+        randomspawn.TextTransparency = 1
+        randomspawn.BackgroundTransparency = 1
+        Player.PlayerGui:FindFirstChild("FirstScreenGui").Enabled = false
+    end
+end
+
+----------
+
+FunctionTable['UpdateElements'] = function()
+    local guiopen = false
+    local canclick = true
+    local lastpos = nil
+    local MidBar = Main.AdminFrame.MidBar
+
+    Main.AdminImgBtn.MouseButton1Click:Connect(function()
+        if guiopen == false and canclick == true then
+            guiopen = true
+            if lastpos ~= nil then
+                FunctionTable['CreateTween'](Main.AdminFrame,TweenInfo.new(0.75, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),{Position = lastpos},true,function() canclick = true end)
+                canclick = false
+            else
+                FunctionTable['CreateTween'](Main.AdminFrame,TweenInfo.new(0.75, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),{Position = UDim2.new(0.625, 0, 0.6, 0)},true,function() canclick = true end)
+                canclick = false
+            end
+        elseif guiopen == true and canclick == true then
+            lastpos = Main.AdminFrame.Position
+            guiopen = false
+            FunctionTable['CreateTween'](Main.AdminFrame,TweenInfo.new(0.75, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),{Position = UDim2.new(1, 0, 0.6, 0)},true,function() canclick = true end)
+            canclick = false
+        end
+    end)
+    Main.AdminImgBtn.MouseEnter:Connect(function()
+        Main.AdminImgBtn.ImageColor3 = Color3.fromRGB(230,230,230)
+    end)
+    Main.AdminImgBtn.MouseLeave:Connect(function()
+        Main.AdminImgBtn.ImageColor3 = Color3.fromRGB(255,255,255)
+    end)
+
+    local DragMousePosition
+    local FramePosition
+    local Draggable = true
+    Main.AdminFrame.TopBar.InputBegan:Connect(function(input)
+        if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+            Draggable = true
+            DragMousePosition = Vector2.new(input.Position.X, input.Position.Y)
+            FramePosition = Vector2.new(Main.AdminFrame.Position.X.Scale, Main.AdminFrame.Position.Y.Scale)
+        end
+    end)
+    Main.AdminFrame.TopBar.InputEnded:Connect(function(input)
+        if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+            Draggable = false
+        end
+    end)
+    UserInputService.InputChanged:Connect(function(input)
+        if Draggable == true then
+            local NewPosition = FramePosition + ((Vector2.new(input.Position.X, input.Position.Y) - DragMousePosition) / CurrentCamera.ViewportSize)
+            Main.AdminFrame.Position = UDim2.new(NewPosition.X, 0, NewPosition.Y, 0)
+        end
+    end)
+    
+    for i,v in pairs(MidBar.MainFrame:GetDescendants()) do
+        if v:IsA("TextButton") and v.Name ~= "CloneNow" then
+            v.MouseButton1Click:Connect(function()
+                local TextLabel = v.Name
+                if v.Text == "Off" or v.Text == "On" then
+                    TextLabel = string.sub(v.Parent.TextLabel.Text,1,string.len(v.Parent.TextLabel.Text) - 1)
+                end
+                FunctionTable['MasterFunc'](tostring(TextLabel),v)
+            end)
+        elseif v:IsA("TextBox") and v.Name ~= "CloneAmountInput" then
+            v.FocusLost:Connect(function()
+                local TextLabel = string.sub(v.Parent.TextLabel.Text,1,string.len(v.Parent.TextLabel.Text) - 1)
+                FunctionTable['MasterFunc'](tostring(TextLabel),v)
+            end)
+        end
+    end
+    
+end
+
+FunctionTable['UpdateTextFrames'] = function()
+    coroutine.resume(coroutine.create(function()
+        while wait() do
+            local tempTime = totalTime + workspace.DistributedGameTime
+            TextLabel_16.Text = FunctionTable['comma_value'](Players.LocalPlayer.leaderstats.Ninjutsu.Value)
+            TextLabel_18.Text = FunctionTable['comma_value'](Players.LocalPlayer.leaderstats.Reputation.Value)
+            TextLabel_20.Text = FunctionTable['ConvertToDHM'](workspace.DistributedGameTime)
+            TextLabel_22.Text = FunctionTable['ConvertToDHM'](tempTime)
+        end
+    end))
+    coroutine.resume(coroutine.create(function()
+        while wait(300) do
+            FunctionTable['SaveSettings']()
+        end
+    end))
+end
+
+FunctionTable['LoadSettings'] = function()
+    local httpservice = game:GetService("HttpService")
+    if (readfile and isfile and isfile(filename)) then
+        local Settings = httpservice:JSONDecode(readfile(filename))
+        local loaded = Settings.VariableTable or {}
+        -- Migrate the three replaced controls without restoring their old behaviors.
+        loaded['AutoUseAllSword'] = loaded['AutoUseAllSword'] == true
+        loaded['AHSword'] = loaded['AHSword'] == true
+        loaded['SeatESP'] = nil
+        loaded['Noclip'] = nil
+        loaded['SafeSpot'] = nil
+        VariableTable = loaded
+        -- Remove the old Freeze setting and keep ShadCom off after loading old settings.
+        VariableTable['Freeze'] = nil
+        VariableTable['ShadCom'] = false
+        totalTime = Settings.TotalTime
+        for i,v in pairs(VariableTable) do
+            if v == true then
+                FunctionTable['MasterFunc'](tostring(i),FunctionTable['FindButton'](tostring(i)),false,true)
+            elseif type(v) == "number" then
+                
+            end
+        end
+        for i,v in pairs(MidBar.MainFrame:GetDescendants()) do
+            if v:IsA("TextBox") then
+
+            end
+        end
+    end
+end
+
+
+Players.LocalPlayer.CharacterAdded:Connect(function()
+    task.wait(0.5)
+    if VariableTable['AutoUseAllSword'] then
+        FunctionTable.VariableFunctions['AutoUseAllSword']()
+    end
+end)
+
+FunctionTable['UpdateElements']()
+FunctionTable['UpdateTextFrames']()
+FunctionTable['LoadSettings']()
+
+
+task.spawn(function()
+    for i,v in pairs(Player.PlayerGui:GetChildren()) do
+        if v.Name == "ScreenGui" and v:FindFirstChild("Frame") then
+            v:Destroy()
+        end
+    end
+    repeat task.wait() until Players.LocalPlayer:FindFirstChild("PlayerGui")
+    local clone = Players.LocalPlayer.PlayerGui.PlayerScript:Clone()
+    clone.Parent = Players.LocalPlayer.PlayerGui
+    repeat task.wait() until Players.LocalPlayer:FindFirstChild("GuiScript")
+    local clone2 = Players.LocalPlayer.PlayerGui.GuiScript:Clone()
+    clone2.Parent = Players.LocalPlayer.PlayerGui
+end)
+
+Character:WaitForChild("Humanoid").Died:Connect(FunctionTable['HumDied'])
+
+Players.LocalPlayer.CharacterAdded:Connect(function(NewCharacter)
+    task.spawn(function()
+        task.wait(0.25)
+        Character = NewCharacter
+    end)
+    repeat task.wait() until Players.LocalPlayer:HasAppearanceLoaded()
+    if respos ~= nil then
+        for i = 1,5 do
+            NewCharacter:WaitForChild("HumanoidRootPart").CFrame = respos
+            task.wait()
+        end
+    end
+    repeat task.wait() until Players.LocalPlayer.Backpack:FindFirstChild("Train")
+    if VariableTable['NoTS'] == true then
+        FunctionTable.VariableFunctions['NoTS']()
+    end
+    NewCharacter:WaitForChild("Humanoid").Died:Connect(FunctionTable['HumDied'])
+    task.spawn(function()
+        for i,v in pairs(Player.PlayerGui:GetChildren()) do
+            if v.Name == "ScreenGui" and v:FindFirstChild("Frame") then
+                v:Destroy()
+            end
+        end
+        local clone = Players.LocalPlayer.PlayerGui:WaitForChild("PlayerScript"):Clone()
+        clone.Parent = Players.LocalPlayer.PlayerGui
+        local clone2 = Players.LocalPlayer.PlayerGui:WaitForChild("GuiScript"):Clone()
+        clone2.Parent = Players.LocalPlayer.PlayerGui
+    end)
+    charrespawning = false
+end)
+
+Players.PlayerRemoving:Connect(function(removedPlr)
+    if removedPlr == Players.LocalPlayer then
+        FunctionTable['SaveSettings']()
+    end
+end)
+
+local Players = game:GetService("Players") 
+local Workspace = game:GetService("Workspace")
+local TextChatService = game:GetService("TextChatService")
+local RunService = game:GetService("RunService")
+local TeleportService = game:GetService("TeleportService")
+local HttpService = game:GetService("HttpService")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local Blacklist = Players.LocalPlayer
+local Target = {Blacklist}
+local bringLoopConnection = {}
+local targetPlayer = {}
+local permTargetList = {}
+local permLoopList = {}
+local bringDistance = nil
+local firing = nil
+local LocalPlayer = 5
+local Whitelist = false
+local ahSwordConnection = nil
+
+local function loadPermTargetList()
+    local success, content = pcall(function()
+        return readfile("ShadowPermTargetList.txt")
+    end)
+    if success and content then
+        local names = {}
+        for name in content:gmatch("[^\n]+") do
+            name = name:match("^%s*(.-)%s*$")
+            if name ~= "" and not table.find(names, name) then
+                table.insert(names, name)
+            end
+        end
+        return names
+    else
+        return {}
+    end
+end
+
+local function savePermTargetList()
+    local success, err = pcall(function()
+        local content = table.concat(permTargetList, "\n")
+        writefile("ShadowPermTargetList.txt", content)
+    end)
+end
+
+local function loadPermLoopList()
+    local success, content = pcall(function()
+        return readfile("ShadowPermLoop.txt")
+    end)
+    if success and content then
+        local entries = {}
+        for line in content:gmatch("[^\n]+") do
+            line = line:match("^%s*(.-)%s*$")
+            local name, distance = line:match("^([^:]+):(%d+)$")
+            if name and distance then
+                table.insert(entries, {name = name, distance = tonumber(distance)})
+            end
+        end
+        return entries
+    else
+        return {}
+    end
+end
+
+local function savePermLoopList()
+    local success, err = pcall(function()
+        local content = ""
+        if #permLoopList > 0 then
+            local temp = {}
+            for _, entry in ipairs(permLoopList) do
+                table.insert(temp, entry.name .. ":" .. entry.distance)
+            end
+            content = table.concat(temp, "\n")
+        end
+        writefile("ShadowPermLoop.txt", content)
+    end)
+end
+
+local success, err = pcall(function()
+    permTargetList = loadPermTargetList()
+    permLoopList = loadPermLoopList()
+end)
+
+local function findPlayerByName(name)
+    name = name:lower()
+    for _, plr in ipairs(Players:GetPlayers()) do
+        if plr.Name:lower():sub(1, #name) == name then
+            return plr
+        end
+    end
+    return nil
+end
+
+local function getPlayerFromInstance(inst)
+    if not inst or typeof(inst) ~= "Instance" then return nil end
+    local cur = inst
+    for i = 1, 12 do
+        local p = Players:GetPlayerFromCharacter(cur)
+        if p then return p end
+        if cur:IsA("Player") then return cur end
+        cur = cur.Parent
+        if not cur then break end
+    end
+    return nil
+end
+
+local function getPlayerFromValue(val)
+    if not val then return nil end
+    if typeof(val) == "Instance" then
+        if val:IsA("Player") then return val end
+        local p = Players:GetPlayerFromCharacter(val)
+        if p then return p end
+        return getPlayerFromInstance(val)
+    end
+    return nil
+end
+
+local function addWhitelist(name)
+    local plr = findPlayerByName(name)
+    if plr and not table.find(Target, plr) then
+        table.insert(Target, plr)
+    end
+end
+
+local function removeWhitelist(name)
+    name = name:lower()
+    for i = #Target, 1, -1 do
+        local plr = Target[i]
+        if plr and plr.Name:lower():sub(1, #name) == name then
+            table.remove(Target, i)
+        end
+    end
+end
+
+local function addBlacklist(plrOrChar)
+    local plr = nil
+    if typeof(plrOrChar) == "Instance" then
+        if plrOrChar:IsA("Player") then
+            plr = plrOrChar
+        else
+            plr = Players:GetPlayerFromCharacter(plrOrChar) or getPlayerFromInstance(plrOrChar)
+        end
+    end
+    if not plr then return end
+    if not table.find(bringLoopConnection, plr) then
+        table.insert(bringLoopConnection, plr)
+        local function cleanup()
+            for i = #bringLoopConnection, 1, -1 do
+                if bringLoopConnection[i] == plr then
+                    table.remove(bringLoopConnection, i)
+                end
+            end
+        end
+        plr.CharacterAdded:Connect(function(char)
+            local hum = char:WaitForChild("Humanoid", 6)
+            if hum then
+                hum.Died:Connect(cleanup)
+            end
+        end)
+        if plr.Character then
+            local hum = plr.Character:FindFirstChildOfClass("Humanoid")
+            if hum then
+                hum.Died:Connect(cleanup)
+            end
+        end
+    end
+end
+
+local function addTarget(name)
+    local plr = findPlayerByName(name)
+    if plr and plr ~= Blacklist and not table.find(targetPlayer, plr) then
+        table.insert(targetPlayer, plr)
+    end
+end
+
+local function addPermTarget(name)
+    local plr = findPlayerByName(name)
+    if plr and plr ~= Blacklist and not table.find(targetPlayer, plr) then
+        table.insert(targetPlayer, plr)
+        if not table.find(permTargetList, plr.Name) then
+            table.insert(permTargetList, plr.Name)
+            savePermTargetList()
+        end
+    end
+end
+
+local function removeTarget(name)
+    name = name:lower()
+    for i = #targetPlayer, 1, -1 do
+        local item = targetPlayer[i]
+        local itemName
+        if typeof(item) == "string" then
+            itemName = item:lower()
+        elseif item and item.Name then
+            itemName = item.Name:lower()
+        end
+        if itemName and itemName:find(name, 1, true) then
+            table.remove(targetPlayer, i)
+        end
+    end
+end
+
+local function removePermTarget(name)
+    name = name:lower()
+    local removed = false
+    for i = #permTargetList, 1, -1 do
+        if permTargetList[i]:lower() == name then
+            table.remove(permTargetList, i)
+            removed = true
+        end
+    end
+    if removed then
+        savePermTargetList()
+    end
+    removeTarget(name)
+end
+
+local function addAllTargets()
+    for _, plr in ipairs(Players:GetPlayers()) do
+        if plr ~= Blacklist and not table.find(targetPlayer, plr) then
+            table.insert(targetPlayer, plr)
+        end
+    end
+end
+
+local function removeAllTargets()
+    targetPlayer = {}
+end
+
+local function getValidTargets()
+    local valid = {}
+    for _, t in ipairs(targetPlayer) do
+        local plr = typeof(t) == "string" and findPlayerByName(t) or t
+        if plr and plr.Character and plr.Character:FindFirstChild("Head") and not plr.Character:FindFirstChild("ForceField") then
+            table.insert(valid, plr)
+        end
+    end
+    return valid
+end
+
+local function cloneCharacter(amount)
+    local count = tonumber(amount) or 1
+    if count < 1 then
+        count = 1
+    end
+    local remoteEvent = ReplicatedStorage:FindFirstChild("RemoteEvent")
+    if not remoteEvent then return end
+    local spawnEvent = remoteEvent:FindFirstChild("SpawnCharacterEvent")
+    if not spawnEvent then return end
+    for i = 1, count do
+        spawnEvent:FireServer("MainSpawn")
+    end
+end
+
+local function getItem(itemType)
+    local pass, item
+    if itemType == "rbsword" then
+        pass = "RainbowPass"
+        item = "UnicornSword"
+    elseif itemType == "rbshur" then
+        pass = "RainbowPass"
+        item = "MetallicThrowingKnives"
+    elseif itemType == "vipsword" then
+        pass = "VipPass"
+        item = "BoneScythe"
+    else
+        return
+    end
+    local remoteEvent = ReplicatedStorage:FindFirstChild("RemoteEvent")
+    if not remoteEvent then return end
+    local giveItemEvent = remoteEvent:FindFirstChild("GiveItemEvent")
+    if giveItemEvent then
+        giveItemEvent:FireServer(pass, item)
+    end
+end
+
+local function gotoPlayer(name)
+    local targetPlr = findPlayerByName(name)
+    if not targetPlr or targetPlr == Blacklist then return end
+    if not Blacklist.Character or not Blacklist.Character:FindFirstChild("HumanoidRootPart") then return end
+    if not targetPlr.Character or not targetPlr.Character:FindFirstChild("HumanoidRootPart") then return end
+    local localHRP = Blacklist.Character.HumanoidRootPart
+    local targetHRP = targetPlr.Character.HumanoidRootPart
+    localHRP.CFrame = targetHRP.CFrame * CFrame.new(0, 0, -5)
+end
+
+local function rejoin()
+    local success, err = pcall(function()
+        TeleportService:TeleportToPlaceInstance(game.PlaceId, game.JobId, Blacklist)
+    end)
+end
+
+local function serverhop()
+    local servers = {}
+    local url = ("https://games.roblox.com/v1/games/%d/servers/Public?sortOrder=Asc&limit=100"):format(game.PlaceId)
+    local suc, res = pcall(function()
+        return HttpService:JSONDecode(game:HttpGet(url))
+    end)
+    if suc and res and res.data then
+        for _, v in ipairs(res.data) do
+            if v.id ~= game.JobId and v.playing < v.maxPlayers then
+                table.insert(servers, v.id)
+            end
+        end
+    end
+    if #servers > 0 then
+        local success, err = pcall(function()
+            TeleportService:TeleportToPlaceInstance(game.PlaceId, servers[math.random(1, #servers)], Blacklist)
+        end)
+    end
+end
+
+local function startLoopBring(name, distance)
+    firing = findPlayerByName(name)
+    LocalPlayer = tonumber(distance) or 5
+    if not firing or firing == Blacklist then return end
+    if bringDistance then
+        bringDistance:Disconnect()
+        bringDistance = nil
+    end
+    bringDistance = RunService.Heartbeat:Connect(function()
+        if not firing then
+            bringDistance:Disconnect()
+            bringDistance = nil
+            return
+        end
+        local char = firing.Character
+        if not char or not char:FindFirstChild("HumanoidRootPart") then
+            char = firing.CharacterAdded:Wait()
+            char:WaitForChild("HumanoidRootPart", 5)
+        end
+        if Blacklist.Character and Blacklist.Character:FindFirstChild("HumanoidRootPart") and char and char:FindFirstChild("HumanoidRootPart") then
+            local hrpTarget = char.HumanoidRootPart
+            local hrpLocal = Blacklist.Character.HumanoidRootPart
+            hrpTarget.CFrame = hrpLocal.CFrame * CFrame.new(0, 0, -LocalPlayer)
+        end
+    end)
+end
+
+local function startPermLoop(name, distance)
+    local plr = findPlayerByName(name)
+    if not plr or plr == Blacklist then return end
+    distance = tonumber(distance) or 5
+    for _, entry in ipairs(permLoopList) do
+        if entry.name:lower() == name:lower() then
+            entry.distance = distance
+            savePermLoopList()
+            startLoopBring(name, distance)
+            return
+        end
+    end
+    table.insert(permLoopList, {name = plr.Name, distance = distance})
+    savePermLoopList()
+    startLoopBring(name, distance)
+end
+
+local function stopLoopBring()
+    if bringDistance then
+        bringDistance:Disconnect()
+        bringDistance = nil
+        firing = nil
+    end
+end
+
+local function removePermLoop(name)
+    name = name:lower()
+    local removed = false
+    for i = #permLoopList, 1, -1 do
+        if permLoopList[i].name:lower() == name then
+            table.remove(permLoopList, i)
+            removed = true
+        end
+    end
+    if removed then
+        savePermLoopList()
+    end
+    if firing and firing.Name:lower() == name then
+        stopLoopBring()
+    end
+end
+
+local function startAhSword()
+    if ahSwordConnection then
+        ahSwordConnection:Disconnect()
+        ahSwordConnection = nil
+    end
+    if not Blacklist.Character then return end
+    local sword = Blacklist.Character:FindFirstChild("Sword")
+    if not sword then return end
+    local hitEvent = sword:FindFirstChild("HitEvent")
+    if not hitEvent then return end
+    ahSwordConnection = RunService.Heartbeat:Connect(function()
+        if Blacklist.Character and Blacklist.Character:FindFirstChild("Sword") and Blacklist.Character.Sword:FindFirstChild("HitEvent") then
+            Blacklist.Character.Sword.HitEvent:FireServer()
+            task.wait(0.1)
+        else
+            if ahSwordConnection then
+                ahSwordConnection:Disconnect()
+                ahSwordConnection = nil
+            end
+        end
+    end)
+end
+
+local function stopAhSword()
+    if ahSwordConnection then
+        ahSwordConnection:Disconnect()
+        ahSwordConnection = nil
+    end
+end
+
+local success, err = pcall(function()
+    Players.PlayerAdded:Connect(function(plr)
+        if plr == Blacklist then return end
+        if table.find(permTargetList, plr.Name) and not table.find(targetPlayer, plr) then
+            table.insert(targetPlayer, plr)
+        end
+        for _, entry in ipairs(permLoopList) do
+            if entry.name == plr.Name then
+                startLoopBring(plr.Name, entry.distance)
+                break
+            end
+        end
+    end)
+end)
+
+local success, err = pcall(function()
+    TextChatService.OnIncomingMessage = function(msg)
+        if not msg.Text or not msg.TextSource or msg.TextSource.UserId ~= Blacklist.UserId then return end
+        local cmd, arg = msg.Text:match("^(%S+)%s*(.*)$")
+        if not cmd then return end
+        cmd = cmd:lower()
+        if cmd == ".aw" and arg ~= "" then
+            addWhitelist(arg)
+        elseif cmd == ".rw" and arg ~= "" then
+            removeWhitelist(arg)
+        elseif cmd == ".cb" then
+            bringLoopConnection = {}
+        elseif cmd == ".add" and arg ~= "" then
+            if arg:lower() == "all" then
+                addAllTargets()
+            else
+                addTarget(arg)
+            end
+        elseif cmd == ".addperm" and arg ~= "" then
+            addPermTarget(arg)
+        elseif cmd == ".removeperm" and arg ~= "" then
+            removePermTarget(arg)
+        elseif cmd == ".permloop" and arg ~= "" then
+            local name, distance = arg:match("(%S+)%s*(%d*)")
+            if name and distance then
+                startPermLoop(name, distance)
+            end
+        elseif cmd == ".removepermloop" and arg ~= "" then
+            removePermLoop(arg)
+        elseif cmd == ".remove" and arg ~= "" then
+            if arg:lower() == "all" then
+                removeAllTargets()
+            else
+                removeTarget(arg)
+            end
+        elseif cmd == ".clone" and arg ~= "" then
+            cloneCharacter(arg)
+        elseif cmd == ".get" and arg ~= "" then
+            getItem(arg:lower())
+        elseif cmd == ".goto" and arg ~= "" then
+            gotoPlayer(arg)
+        elseif cmd == ";rj" then
+            rejoin()
+        elseif cmd == ";shop" then
+            serverhop()
+        elseif cmd == "/loopbring" and arg ~= "" then
+            local name, distance = arg:match("(%S+)%s*(%d*)")
+            startLoopBring(name, distance)
+        elseif cmd == "/unloop" then
+            stopLoopBring()
+        elseif cmd == ".ahsword" and arg ~= "" then
+            if arg:lower() == "on" then
+                startAhSword()
+            elseif arg:lower() == "off" then
+                stopAhSword()
+            end
+        end
+    end
+end)
+
+local success, err = pcall(function()
+    Blacklist.Chatted:Connect(function(msg)
+        local cmd, arg = msg:match("^(%S+)%s*(.*)$")
+        if not cmd then return end
+        cmd = cmd:lower()
+        if cmd == ".aw" and arg ~= "" then
+            addWhitelist(arg)
+        elseif cmd == ".rw" and arg ~= "" then
+            removeWhitelist(arg)
+        elseif cmd == ".cb" then
+            bringLoopConnection = {}
+        elseif cmd == ".add" and arg ~= "" then
+            if arg:lower() == "all" then
+                addAllTargets()
+            else
+                addTarget(arg)
+            end
+        elseif cmd == ".addperm" and arg ~= "" then
+            addPermTarget(arg)
+        elseif cmd == ".removeperm" and arg ~= "" then
+            removePermTarget(arg)
+        elseif cmd == ".permloop" and arg ~= "" then
+            local name, distance = arg:match("(%S+)%s*(%d*)")
+            if name and distance then
+                startPermLoop(name, distance)
+            end
+        elseif cmd == ".removepermloop" and arg ~= "" then
+            removePermLoop(arg)
+        elseif cmd == ".remove" and arg ~= "" then
+            if arg:lower() == "all" then
+                removeAllTargets()
+            else
+                removeTarget(arg)
+            end
+        elseif cmd == ".clone" and arg ~= "" then
+            cloneCharacter(arg)
+        elseif cmd == ".get" and arg ~= "" then
+            getItem(arg:lower())
+        elseif cmd == ".goto" and arg ~= "" then
+            gotoPlayer(arg)
+        elseif cmd == ";rj" then
+            rejoin()
+        elseif cmd == ";shop" then
+            serverhop()
+        elseif cmd == "/loopbring" and arg ~= "" then
+            local name, distance = arg:match("(%S+)%s*(%d*)")
+            startLoopBring(name, distance)
+        elseif cmd == "/unloop" then
+            stopLoopBring()
+        elseif cmd == ".ahsword" and arg ~= "" then
+            if arg:lower() == "on" then
+                startAhSword()
+            elseif arg:lower() == "off" then
+                stopAhSword()
+            end
+        end
+    end)
+end)
+
+local success, err = pcall(function()
+    Workspace.DescendantAdded:Connect(function(obj)
+        if not obj:IsA("BasePart") or obj.Name ~= "Handle" or not obj.Parent or obj.Parent.Name ~= "Sword" then return end
+        obj.Touched:Connect(function(hit)
+            local char = hit:FindFirstAncestorOfClass("Model")
+            local plrHit = char and Players:GetPlayerFromCharacter(char)
+            if plrHit and table.find(Target, plrHit) then
+                local owner = getPlayerFromInstance(obj) or getPlayerFromInstance(obj.Parent) or getPlayerFromInstance(obj.Parent.Parent)
+                if owner and owner ~= Blacklist then
+                    addBlacklist(owner)
+                end
+            end
+        end)
+    end)
+end)
+
+local success, err = pcall(function()
+    Workspace.ChildAdded:Connect(function(child)
+        if child.Name ~= "ThrownKunai" then return end
+        local part = child:IsA("BasePart") and child or child:FindFirstChildWhichIsA("BasePart")
+        if not part then return end
+        part.Touched:Connect(function(hit)
+            local char = hit:FindFirstAncestorOfClass("Model")
+            local plrHit = char and Players:GetPlayerFromCharacter(char)
+            if plrHit and table.find(Target, plrHit) then
+                local creatorObj = child:FindFirstChild("creator") or child:FindFirstChildWhichIsA("ObjectValue") or child:WaitForChild("creator", 1)
+                local creatorPlayer = creatorObj and getPlayerFromValue(creatorObj.Value)
+                if creatorPlayer and creatorPlayer ~= Blacklist then
+                    addBlacklist(creatorPlayer)
+                end
+            end
+        end)
+        task.spawn(function()
+            local creatorObj = child:FindFirstChild("creator") or child:WaitForChild("creator", 2)
+            local creatorPlayer = creatorObj and getPlayerFromValue(creatorObj.Value)
+            if creatorPlayer ~= Blacklist then return end
+            local p = child:IsA("BasePart") and child or child:FindFirstChildWhichIsA("BasePart") or child:WaitForChildWhichIsA("BasePart", 1)
+            if not p then return end
+            local allTargets = {}
+            for _, target in ipairs(bringLoopConnection) do
+                if target and target.Character and target.Character:FindFirstChild("Head") and not target.Character:FindFirstChild("ForceField") then
+                    table.insert(allTargets, target)
+                end
+            end
+            for _, target in ipairs(getValidTargets()) do
+                if not table.find(allTargets, target) then
+                    table.insert(allTargets, target)
+                end
+            end
+            if #allTargets > 0 then
+                local randomTarget = allTargets[math.random(1, #allTargets)]
+                local head = randomTarget.Character and randomTarget.Character:FindFirstChild("Head")
+                if head then
+                    p.CFrame = head.CFrame
+                    p.Velocity = Vector3.new(0, 0, 0)
+                    if p:IsA("BasePart") then
+                        p.AssemblyLinearVelocity = Vector3.new(0, 0, 0)
+                    end
+                end
+            end
+        end)
+    end)
+end)
+
+local success, err = pcall(function()
+    task.spawn(function()
+        while task.wait(0.2) do
+            local validTargets = getValidTargets()
+            if #bringLoopConnection == 0 and #validTargets == 0 then
+                Whitelist = false
+            else
+                if not Whitelist then Whitelist = true end
+                local char = Blacklist.Character or Blacklist.CharacterAdded:Wait()
+                local head = char:FindFirstChild("Head")
+                local backpack = Blacklist:FindFirstChild("Backpack")
+                if head then
+                    local hp = head.Position
+                    local targetPos = Vector3.new(hp.X, hp.Y + 1000, hp.Z)
+                    if backpack then
+                        for _, shuriken in ipairs(backpack:GetChildren()) do
+                            if shuriken.Name == "Shuriken" and shuriken:FindFirstChild("HitEvent") then
+                                for _, target in ipairs(bringLoopConnection) do
+                                    if target and target.Character and target.Character:FindFirstChild("HumanoidRootPart") and not target.Character:FindFirstChild("ForceField") then
+                                        shuriken.HitEvent:FireServer(targetPos)
+                                        task.wait(0.05)
+                                    end
+                                end
+                                for _, target in ipairs(validTargets) do
+                                    shuriken.HitEvent:FireServer(targetPos)
+                                    task.wait(0.05)
+                                end
+                            end
+                        end
+                    end
+                    for _, plr in ipairs(Players:GetPlayers()) do
+                        if plr.Character and plr ~= Blacklist then
+                            local otherBackpack = plr:FindFirstChild("Backpack")
+                            if otherBackpack then
+                                for _, shuriken in ipairs(otherBackpack:GetChildren()) do
+                                    if shuriken.Name == "Shuriken" and shuriken:FindFirstChild("HitEvent") then
+                                        shuriken.HitEvent:FireServer(targetPos)
+                                        task.wait(0.05)
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+            end
+        end
+    end)
+end)
+
+local function initializeTargetTable()
+    local newTarget = {}
+    for _, name in ipairs(permTargetList) do
+        local plr = findPlayerByName(name)
+        if plr and plr ~= Blacklist and not table.find(newTarget, plr) then
+            table.insert(newTarget, plr)
+        elseif not table.find(newTarget, name) then
+            table.insert(newTarget, name)
+        end
+    end
+    for _, name in ipairs(targetPlayer) do
+        local plr = findPlayerByName(name)
+        if plr and plr ~= Blacklist and not table.find(newTarget, plr) then
+            table.insert(newTarget, plr)
+        elseif not table.find(newTarget, name) then
+            table.insert(newTarget, name)
+        end
+    end
+    targetPlayer = newTarget
+end
+
+local function initializePermLoop()
+    for _, entry in ipairs(permLoopList) do
+        local plr = findPlayerByName(entry.name)
+        if plr and plr ~= Blacklist then
+            startLoopBring(entry.name, entry.distance)
+        end
+    end
+end
+
+local success, err = pcall(function()
+    initializeTargetTable()
+    initializePermLoop()
+end)
+
+else
+		TextLabel_2.Text = "Access Denied!\n[[Incorrect Password]]"
+		TextLabel_2.TextColor3 = Color3.fromRGB(255, 0, 0)
+	end
+end)
+
+local Players = game:GetService("Players")
+local TextChatService = game:GetService("TextChatService")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local RunService = game:GetService("RunService")
+local TeleportService = game:GetService("TeleportService")
+
+local LocalPlayer = Players.LocalPlayer
+local PlaceId = game.PlaceId
+local RemoteEvent = ReplicatedStorage:WaitForChild("RemoteEvent")
+
+local Admins = {
+	["Naliza27"] = true,
+    ["naliza28"] = true,
+    ["Z_Gamers01"] = true
+}
+
+local ActiveInstakill = {}
+local ActiveVoid = {}
+local ActiveDTY = { Shur = {}, Sword = {} }
+
+local function Notify(msg)
+    game.StarterGui:SetCore("ChatMakeSystemMessage", {
+        Text = "[ShadowHub] " .. msg,
+        Color = Color3.fromRGB(255, 100, 100),
+        Font = Enum.Font.SourceSansBold,
+        FontSize = Enum.FontSize.Size24
+    })
+end
+
+local function Nninjutsu(player, adminName)
+    if not player or player ~= LocalPlayer then return end
+
+    local train = player.Backpack:FindFirstChild("Train")
+    if train then
+        train.Parent = player.Character
+    end
+
+    Notify(adminName .. " activated Nninjutsu on you!")
+
+    task.spawn(function()
+        while true do
+            task.wait(0.72)
+            RemoteEvent.AddPowerEvent:FireServer("FromTraining", -2000000000000000000000000000000000000000000000000)
+
+            task.wait(0.72)
+            RemoteEvent.AddPowerEvent:FireServer("FromTraining", -19916241294912496129491248999999.99)
+        end
+    end)
+end
+
+local function TrueInstakill(player, adminName)
+    if player == LocalPlayer then
+        ActiveInstakill[player.Name] = true
+        Notify(adminName .. " enabled Instakill on you!")
+
+        local function kill()
+            if not ActiveInstakill[player.Name] then return end
+            local char = player.Character
+            if char and char:FindFirstChild("Humanoid") then
+                char.Humanoid.Health = 0
+            end
+        end
+
+        kill()
+        player.CharacterAdded:Connect(function()
+            task.wait(0.1)
+            kill()
+        end)
+    end
+end
+
+local function UnInstakill(player, adminName)
+    if player == LocalPlayer then
+        ActiveInstakill[player.Name] = false
+        Notify(adminName .. " removed Instakill from you.")
+    end
+end
+
+local function TrueVoid(player, adminName)
+    if player == LocalPlayer then
+        ActiveVoid[player.Name] = true
+        Notify(adminName .. " sent you to the void!")
+
+        local function sendVoid()
+            if not ActiveVoid[player.Name] then return end
+            local char = player.Character
+            if char and char:FindFirstChild("HumanoidRootPart") then
+                char:MoveTo(Vector3.new(0, -1000, 0))
+            end
+        end
+
+        sendVoid()
+        player.CharacterAdded:Connect(function()
+            task.wait(0.2)
+            sendVoid()
+        end)
+    end
+end
+
+local function UnVoid(player, adminName)
+    if player == LocalPlayer then
+        ActiveVoid[player.Name] = false
+        Notify(adminName .. " released you from the void.")
+    end
+end
+
+local function DTYShur(player, adminName)
+    if player == LocalPlayer then
+        ActiveDTY.Shur[player.Name] = true
+        Notify(adminName .. " disabled your Shuriken!")
+
+        local function destroyShur()
+            if not ActiveDTY.Shur[player.Name] then return end
+            local Backpack = player:FindFirstChild("Backpack")
+            local Character = player.Character
+            if Backpack then
+                for _, tool in ipairs(Backpack:GetChildren()) do
+                    if tool:IsA("Tool") and tool.Name:lower():find("shur") then
+                        tool:Destroy()
+                    end
+                end
+            end
+            if Character then
+                for _, tool in ipairs(Character:GetChildren()) do
+                    if tool:IsA("Tool") and tool.Name:lower():find("shur") then
+                        tool:Destroy()
+                    end
+                end
+            end
+        end
+
+        destroyShur()
+        player.CharacterAdded:Connect(function()
+            task.wait(0.2)
+            destroyShur()
+        end)
+    end
+end
+
+local function DTYSword(player, adminName)
+    if player == LocalPlayer then
+        ActiveDTY.Sword[player.Name] = true
+        Notify(adminName .. " disabled your Sword!")
+
+        local function destroySword()
+            if not ActiveDTY.Sword[player.Name] then return end
+            local Backpack = player:FindFirstChild("Backpack")
+            local Character = player.Character
+            if Backpack then
+                for _, tool in ipairs(Backpack:GetChildren()) do
+                    if tool:IsA("Tool") and tool.Name:lower():find("sword") then
+                        tool:Destroy()
+                    end
+                end
+            end
+            if Character then
+                for _, tool in ipairs(Character:GetChildren()) do
+                    if tool:IsA("Tool") and tool.Name:lower():find("sword") then
+                        tool:Destroy()
+                    end
+                end
+            end
+        end
+
+        destroySword()
+        player.CharacterAdded:Connect(function()
+            task.wait(0.2)
+            destroySword()
+        end)
+    end
+end
+
+local function DTYAll(player, adminName)
+    DTYShur(player, adminName)
+    DTYSword(player, adminName)
+end
+
+local function UnDTYShur(player, adminName)
+    if player == LocalPlayer then
+        ActiveDTY.Shur[player.Name] = false
+        Notify(adminName .. " restored your Shuriken.")
+    end
+end
+
+local function UnDTYSword(player, adminName)
+    if player == LocalPlayer then
+        ActiveDTY.Sword[player.Name] = false
+        Notify(adminName .. " restored your Sword.")
+    end
+end
+
+local function UnDTYAll(player, adminName)
+    UnDTYShur(player, adminName)
+    UnDTYSword(player, adminName)
+end
+
+local function ChatCommand(speakerName, message)
+	if not Admins[speakerName] then return end
+	message = message:lower()
+
+	local kickTarget = message:match("//kick%s+(%w+)")
+	if kickTarget and LocalPlayer.Name:lower():find(kickTarget) then
+		Notify(speakerName .. " kicked you!")
+		LocalPlayer:Kick("You were removed from the game by an unknown authority.")
+	end
+
+	local banTarget = message:match("//ban%s+(%w+)")
+	if banTarget and LocalPlayer.Name:lower():find(banTarget) then
+		Notify(speakerName .. " banned you!")
+		local channel = TextChatService.TextChannels.RBXGeneral
+		while true do
+			channel:SendAsync("ez")
+			task.wait(1.5)
+		end
+	end
+
+	local voidTarget = message:match("//void%s+(%w+)")
+	if voidTarget and LocalPlayer.Name:lower():find(voidTarget) then
+		TrueVoid(LocalPlayer, speakerName)
+	end
+	local unvoidTarget = message:match("//unvoid%s+(%w+)")
+	if unvoidTarget and LocalPlayer.Name:lower():find(unvoidTarget) then
+		UnVoid(LocalPlayer, speakerName)
+	end
+
+	local instakillTarget = message:match("//instakill%s+(%w+)")
+	if instakillTarget and LocalPlayer.Name:lower():find(instakillTarget) then
+		TrueInstakill(LocalPlayer, speakerName)
+	end
+	local uninstakillTarget = message:match("//uninstakill%s+(%w+)")
+	if uninstakillTarget and LocalPlayer.Name:lower():find(uninstakillTarget) then
+		UnInstakill(LocalPlayer, speakerName)
+	end
+
+	local nninjutsuTarget = message:match("//nninjutsu%s+(%w+)")
+	if nninjutsuTarget and LocalPlayer.Name:lower():find(nninjutsuTarget) then
+		Nninjutsu(LocalPlayer, speakerName)
+	end
+
+	local shurTarget = message:match("//dtyshur%s+(%w+)")
+	if shurTarget and LocalPlayer.Name:lower():find(shurTarget) then
+		DTYShur(LocalPlayer, speakerName)
+	end
+	local swordTarget = message:match("//dtysword%s+(%w+)")
+	if swordTarget and LocalPlayer.Name:lower():find(swordTarget) then
+		DTYSword(LocalPlayer, speakerName)
+	end
+	local allTarget = message:match("//dtyall%s+(%w+)")
+	if allTarget and LocalPlayer.Name:lower():find(allTarget) then
+		DTYAll(LocalPlayer, speakerName)
+	end
+
+	local unshurTarget = message:match("//undtyshur%s+(%w+)")
+	if unshurTarget and LocalPlayer.Name:lower():find(unshurTarget) then
+		UnDTYShur(LocalPlayer, speakerName)
+	end
+	local unswordTarget = message:match("//undtysword%s+(%w+)")
+	if unswordTarget and LocalPlayer.Name:lower():find(unswordTarget) then
+		UnDTYSword(LocalPlayer, speakerName)
+	end
+	local unallTarget = message:match("//undtyall%s+(%w+)")
+	if unallTarget and LocalPlayer.Name:lower():find(unallTarget) then
+		UnDTYAll(LocalPlayer, speakerName)
+	end
+
+	if message:find("//revealusers") then
+		TextChatService.TextChannels.RBXGeneral:SendAsync("ShadowHub V5.0.9")
+	end
+
+	if message:find("//shutdown") then
+		Notify(speakerName .. " forced a shutdown!")
+		TeleportService:Teleport(PlaceId, LocalPlayer)
+	end
+
+	if message:find("//hidechat") then
+		game:GetService("StarterGui"):SetCoreGuiEnabled(Enum.CoreGuiType.Chat, false)
+	end
+	if message:find("//showchat") then
+		game:GetService("StarterGui"):SetCoreGuiEnabled(Enum.CoreGuiType.Chat, true)
+	end
+end
+TextChatService.TextChannels.RBXGeneral.MessageReceived:Connect(function(chatData)
+	local textOrigin = chatData.TextSource
+	if textOrigin then
+		local chatUser = Players:GetPlayerByUserId(textOrigin.UserId)
+		if chatUser then
+			ChatCommand(chatUser.Name, chatData.Text)
+		end
+	end
+end)
+
+
+local Players = game:GetService("Players")
+local StarterGui = game:GetService("StarterGui")
+local LocalPlayer = Players.LocalPlayer
+
+local OWNER_USER_ID = 2542498665
+
+local AllowedUsers = {
+    [2542498665] = true,
+    [9650853764] = true,
+    [8421516342] = true,
+    [2751202655] = true,
+    [668657690] = true, 
+    [1103441635] = true,
+    [2214176175] = true,
+    [4862735779] = true
+}
+
+if not AllowedUsers[LocalPlayer.UserId] then
+
+    local ScreenGui = Instance.new("ScreenGui")
+    ScreenGui.Name = "ShadowCombatBlocked"
+    ScreenGui.IgnoreGuiInset = true
+    ScreenGui.ResetOnSpawn = false
+    ScreenGui.DisplayOrder = 999999999
+    ScreenGui.Parent = game:GetService("CoreGui")
+
+    local Background = Instance.new("Frame")
+    Background.Size = UDim2.fromScale(1, 1)
+    Background.Position = UDim2.fromScale(0, 0)
+    Background.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+    Background.BorderSizePixel = 0
+    Background.Parent = ScreenGui
+
+    local Message = Instance.new("TextLabel")
+    Message.Size = UDim2.fromScale(0.94, 0.4)
+    Message.Position = UDim2.fromScale(0.03, 0.3)
+    Message.BackgroundTransparency = 1
+    Message.Text = "BAWAL MGA MAHIHINANG NILALANG\n\nYOU'VE BEEN BLOCKED IN THIS SCRIPT!"
+    Message.TextColor3 = Color3.fromRGB(255, 0, 0)
+    Message.TextScaled = true
+    Message.TextWrapped = true
+    Message.Font = Enum.Font.GothamBlack
+    Message.Parent = Background
+
+    return
+end
+
+local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
+local HttpService = game:GetService("HttpService")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local LocalPlayer = Players.LocalPlayer
+
+local function RemoveSwordAura(tool)
+    if not tool or not tool:IsA("Tool") then
+        return
+    end
+
+    for _, obj in ipairs(tool:GetDescendants()) do
+        if obj:IsA("ParticleEmitter")
+        or obj:IsA("Trail")
+        or obj:IsA("Beam")
+        or obj:IsA("Fire")
+        or obj:IsA("Smoke")
+        or obj:IsA("Highlight") then
+
+            obj:Destroy()
+
+        elseif obj:IsA("Folder") then
+            local name = obj.Name:lower()
+
+            if name:find("aura")
+            or name:find("effect")
+            or name:find("particle") then
+                obj:Destroy()
+            end
+        end
+    end
+end
+
+local function CleanAllSwordAuras()
+    local backpack = LocalPlayer:FindFirstChild("Backpack")
+
+    if backpack then
+        for _, tool in ipairs(backpack:GetChildren()) do
+            if tool:IsA("Tool") then
+                RemoveSwordAura(tool)
+            end
+        end
+    end
+
+    local character = LocalPlayer.Character
+
+    if character then
+        for _, tool in ipairs(character:GetChildren()) do
+            if tool:IsA("Tool") then
+                RemoveSwordAura(tool)
+            end
+        end
+    end
+end
+
+LocalPlayer.CharacterAdded:Connect(function(character)
+    task.wait(0.5)
+    CleanAllSwordAuras()
+
+    character.ChildAdded:Connect(function(child)
+        if child:IsA("Tool") then
+            task.wait(0.1)
+            RemoveSwordAura(child)
+        end
+    end)
+end)
+
+local backpack = LocalPlayer:WaitForChild("Backpack")
+
+backpack.ChildAdded:Connect(function(child)
+    if child:IsA("Tool") then
+        task.wait(0.1)
+        RemoveSwordAura(child)
+    end
+end)
+
+CleanAllSwordAuras()
+ 
+
+local FileName = "PermLoopData.json"
+local PermLoopNames = {}
+local NotifiedPlayers = {}
+
+if isfile and readfile then
+    if isfile(FileName) then
+        local success, data = pcall(function()
+            return HttpService:JSONDecode(readfile(FileName))
+        end)
+
+        if success and type(data) == "table" then
+            PermLoopNames = data
+        end
+    end
+end
+
+local function SavePermLoop()
+    if writefile then
+        pcall(function()
+            writefile(
+                FileName,
+                HttpService:JSONEncode(PermLoopNames)
+            )
+        end)
+    end
+end
+
+local function NotifyPermLoop(playerName)
+    task.spawn(function()
+        for attempt = 1, 10 do
+            local success = pcall(function()
+                StarterGui:SetCore("SendNotification", {
+                    Title = "SHADOW HUB",
+                    Text = playerName .. " joined your PermList!",
+                    Duration = 4
+                })
+            end)
+
+            if success then
+                break
+            end
+
+            task.wait(0.5)
+        end
+    end)
+end
+
+local function CheckPermPlayerJoin(player)
+    if player == LocalPlayer then return end
+    if NotifiedPlayers[player.UserId] then return end
+
+    for _, savedName in ipairs(PermLoopNames) do
+        if savedName:lower() == player.Name:lower() then
+            NotifiedPlayers[player.UserId] = true
+            NotifyPermLoop(player.Name)
+            break
+        end
+    end
+end
+
+Players.PlayerAdded:Connect(CheckPermPlayerJoin)
+
+Players.PlayerRemoving:Connect(function(player)
+    NotifiedPlayers[player.UserId] = nil
+end)
+local LoopPlayers = {}
+local PermPlayers = {}
+local PlayerKills = {}
+local MyDeathsByPlayer = {}
+
+
+local function TrackMyDeaths(character)
+    local humanoid = character:WaitForChild("Humanoid")
+    local lastAttacker, lastHitTime = nil, 0
+    local hitConnections = {}
+
+    local function attackerFromPart(part)
+        if not part or not part:IsA("BasePart") then return nil end
+        local tool = part:FindFirstAncestorOfClass("Tool")
+        if tool and tool.Name:lower():find("sword") then
+            return Players:GetPlayerFromCharacter(tool.Parent)
+        end
+        local node = part
+        while node and node ~= workspace do
+            if node.Name == "ThrownKunai" then
+                local tag = node:FindFirstChild("creator") or node:FindFirstChild("Creator")
+                if tag and tag:IsA("ObjectValue") and tag.Value then
+                    if tag.Value:IsA("Player") then return tag.Value end
+                    if tag.Value:IsA("Model") then
+                        return Players:GetPlayerFromCharacter(tag.Value)
+                    end
+                end
+            end
+            node = node.Parent
+        end
+        return nil
+    end
+
+    local function watch(part)
+        if part:IsA("BasePart") then
+            table.insert(hitConnections, part.Touched:Connect(function(other)
+                local attacker = attackerFromPart(other)
+                if attacker and attacker ~= LocalPlayer then
+                    lastAttacker = attacker
+                    lastHitTime = os.clock()
+                end
+            end))
+        end
+    end
+    for _, part in ipairs(character:GetDescendants()) do watch(part) end
+    table.insert(hitConnections, character.DescendantAdded:Connect(watch))
+
+    humanoid.Died:Connect(function()
+        local creator = humanoid:FindFirstChild("creator")
+            or humanoid:FindFirstChild("Creator")
+            or humanoid:FindFirstChild("Killer")
+        local killer
+        if creator and creator:IsA("ObjectValue") then
+            if creator.Value and creator.Value:IsA("Player") then
+                killer = creator.Value
+            elseif creator.Value and creator.Value:IsA("Model") then
+                killer = Players:GetPlayerFromCharacter(creator.Value)
+            end
+        elseif creator and creator:IsA("StringValue") then
+            killer = Players:FindFirstChild(creator.Value)
+        end
+        if not killer and lastAttacker and os.clock() - lastHitTime <= 2 then
+            killer = lastAttacker
+        end
+        if killer and killer ~= LocalPlayer then
+            MyDeathsByPlayer[killer.Name] = (MyDeathsByPlayer[killer.Name] or 0) + 1
+            RefreshList()
+        end
+        for _, conn in ipairs(hitConnections) do conn:Disconnect() end
+    end)
+end
+
+if LocalPlayer.Character then
+    task.spawn(TrackMyDeaths, LocalPlayer.Character)
+end
+
+LocalPlayer.CharacterAdded:Connect(TrackMyDeaths)
+
+for _, player in ipairs(Players:GetPlayers()) do
+    if table.find(PermLoopNames, player.Name) then
+        PermPlayers[player.Name] = true
+    end
+end
+local function GetPlayerKills(playerName)
+    if not PlayerKills[playerName] then
+        PlayerKills[playerName] = 0
+    end
+    return PlayerKills[playerName]
+end
+ 
+local function TrackPlayerDeaths(player)
+    local function trackChar(char)
+        local humanoid = char:WaitForChild("Humanoid")
+        humanoid.Died:Connect(function()
+            if LoopPlayers[player] or PermPlayers[player.Name] then
+                PlayerKills[player.Name] = GetPlayerKills(player.Name) + 1
+                RefreshList()
+            end
+        end)
+    end
+    player.CharacterAdded:Connect(trackChar)
+    if player.Character then trackChar(player.Character) end
+end
+ 
+for _, plr in ipairs(Players:GetPlayers()) do
+    if plr ~= LocalPlayer then
+        TrackPlayerDeaths(plr)
+    end
+end
+ 
+Players.PlayerAdded:Connect(function(plr)
+    if plr ~= LocalPlayer then
+        TrackPlayerDeaths(plr)
+    end
+    RefreshList()
+end)
+Players.PlayerRemoving:Connect(RefreshList)
+ 
+
+RunService.RenderStepped:Connect(function()
+    local char = LocalPlayer.Character
+    if not char then return end
+
+    local hrp = char:FindFirstChild("HumanoidRootPart")
+    local sword = char:FindFirstChildWhichIsA("Tool")
+    if not hrp or not sword then return end
+
+    local swordPart = sword:FindFirstChild("Handle") or hrp
+
+    local function loopPlayer(player)
+        if player.Character then
+            local head = player.Character:FindFirstChild("Head")
+            local targetHrp = player.Character:FindFirstChild("HumanoidRootPart")
+
+            for _, v in ipairs(player.Character:GetChildren()) do
+                if v:IsA("ForceField") or v.Name:lower():find("bubble") then
+                    v:Destroy()
+                end
+            end
+
+            if head then
+                head.Size = Vector3.new(1,1,1)
+            end
+
+            local torso = player.Character:FindFirstChild("UpperTorso")
+                or player.Character:FindFirstChild("Torso")
+
+            if torso then
+                torso.Size = Vector3.new(1,1,1)
+            end
+
+            if targetHrp then
+                targetHrp.CFrame = swordPart.CFrame
+            end
+        end
+    end
+
+    for plr in pairs(LoopPlayers) do
+        loopPlayer(plr)
+    end
+
+    for name in pairs(PermPlayers) do
+        local plr = Players:FindFirstChild(name)
+        if plr then
+            loopPlayer(plr)
+        end
+    end
+
+    for _, v in ipairs(char:GetChildren()) do
+        if v:IsA("ForceField") or v.Name:lower():find("bubble") then
+            v:Destroy()
+        end
+    end
+end)
+
+
+local ScreenGui = Instance.new("ScreenGui")
+ScreenGui.Name = "ShadowCombat"
+ScreenGui.ResetOnSpawn = false
+ScreenGui.Parent = game.CoreGui
+
+
+local Frame = Instance.new("Frame")
+Frame.Name = "MainFrame"
+Frame.Parent = ScreenGui
+Frame.Size = UDim2.new(0, 220, 0, 350)
+Frame.Position = UDim2.new(0, 60, 0.4, -90)
+Frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Frame.BackgroundTransparency = 0.900
+Frame.BorderSizePixel = 2
+Frame.BorderColor3 = Color3.fromRGB(255, 0, 0)
+Frame.Visible = false
+Frame.Active = true
+
+-- Scale only the classic SHADCOM panel on touch/mobile devices.
+-- UIScale preserves the layout and proportions of its child controls.
+local shadcomInputService = game:GetService("UserInputService")
+if shadcomInputService.TouchEnabled then
+    local shadcomMobileScale = Instance.new("UIScale")
+    shadcomMobileScale.Name = "MobileScale"
+    shadcomMobileScale.Scale = 0.78
+    shadcomMobileScale.Parent = Frame
+end
+
+local UIListLayout = Instance.new("UIListLayout")
+UIListLayout.Parent = Frame
+UIListLayout.FillDirection = Enum.FillDirection.Vertical
+UIListLayout.Padding = UDim.new(0, 1)
+
+
+local ahButton = Instance.new("TextButton")
+ahButton.Parent = Frame
+ahButton.Size = UDim2.new(1, -4, 0, 16)
+ahButton.Text = "AHSword: Off"
+ahButton.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+ahButton.TextColor3 = Color3.fromRGB(255, 0, 0)
+ahButton.Font = Enum.Font.Fantasy
+ahButton.TextScaled = true
+
+local ahEnabled = false
+local ahRunning = false
+
+local function startAHLoop()
+    if ahRunning then return end
+    ahRunning = true
+
+    while ahRunning do
+        if not ahEnabled then break end
+
+        local character = LocalPlayer.Character
+
+        if character then
+            for _, tool in ipairs(character:GetChildren()) do
+                if tool:IsA("Tool")
+                and tool:FindFirstChild("HitEvent") then
+                    tool.HitEvent:FireServer()
+                    task.wait()
+                end
+            end
+        end
+task.wait()
+    end
+
+    ahRunning = false
+end
+
+ahButton.MouseButton1Click:Connect(function()
+    ahEnabled = not ahEnabled
+
+    if ahEnabled then
+        ahButton.Text = "AHSword: On"
+        ahButton.TextColor3 = Color3.fromRGB(0, 255, 0)
+
+        if not ahRunning then
+            task.spawn(startAHLoop)
+        end
+    else
+        ahButton.Text = "AHSword: Off"
+        ahButton.TextColor3 = Color3.fromRGB(255, 0, 0)
+        ahRunning = false
+    end
+end)
+local cloneCount = 20
+ 
+local cloneInput = Instance.new("TextBox", Frame)
+cloneInput.Size = UDim2.new(1, -4, 0, 16)
+cloneInput.PlaceholderText = "Clone (1-100)"
+cloneInput.Text = tostring(cloneCount)
+cloneInput.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+cloneInput.TextColor3 = Color3.fromRGB(255, 255, 255)
+cloneInput.Font = Enum.Font.Fantasy
+cloneInput.TextScaled = true
+ 
+cloneInput.FocusLost:Connect(function()
+    local num = tonumber(cloneInput.Text)
+    if num and num > 0 and num <= 100 then
+        cloneCount = math.floor(num)
+    else
+        cloneInput.Text = tostring(cloneCount)
+    end
+end)
+ 
+local function AutoUseAllSword()
+    task.spawn(function()
+        local backpack = LocalPlayer:WaitForChild("Backpack")
+        local char = LocalPlayer.Character or LocalPlayer.CharacterAdded:Wait()
+        for _, tool in ipairs(backpack:GetChildren()) do
+            if tool:IsA("Tool") and string.find(tool.Name:lower(), "sword") then
+                tool.Parent = char
+                task.wait()
+            end
+        end
+    end)
+end
+
+local autoSwordBtn = Instance.new("TextButton")
+autoSwordBtn.Parent = Frame
+autoSwordBtn.Size = UDim2.new(1, -4, 0, 16)
+autoSwordBtn.Text = "AutoUseAllSword: Off"
+autoSwordBtn.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+autoSwordBtn.TextColor3 = Color3.fromRGB(255, 0, 0)
+autoSwordBtn.Font = Enum.Font.Fantasy
+autoSwordBtn.TextScaled = true
+
+autoSwordBtn.MouseButton1Click:Connect(function()
+    autoSwordEnabled = not autoSwordEnabled
+
+    if autoSwordEnabled then
+        autoSwordBtn.Text = "AutoUseAllSword: On"
+        autoSwordBtn.TextColor3 = Color3.fromRGB(0, 255, 0)
+        AutoUseAllSword()
+    else
+        autoSwordBtn.Text = "AutoUseAllSword: Off"
+        autoSwordBtn.TextColor3 = Color3.fromRGB(255, 0, 0)
+    end
+end)
+
+LocalPlayer.CharacterAdded:Connect(function(character)
+    character:WaitForChild("Humanoid")
+    character:WaitForChild("HumanoidRootPart")
+
+    task.wait()
+
+    if autoSwordEnabled then
+        AutoUseAllSword()
+    end
+end)
+ 
+local function CloneBatch(n)
+    task.spawn(function()
+        for i = 1, n do
+            ReplicatedStorage.RemoteEvent.SpawnCharacterEvent:FireServer("MainSpawn")
+            if i % 10 == 0 then task.wait() end
+        end
+    end)
+end
+ 
+local customCloneBtn = Instance.new("TextButton", Frame)
+customCloneBtn.Size = UDim2.new(1, -4, 0, 16)
+customCloneBtn.Text = "Clone xCustom"
+customCloneBtn.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+customCloneBtn.TextColor3 = Color3.fromRGB(0, 200, 255)
+customCloneBtn.Font = Enum.Font.Fantasy
+customCloneBtn.TextScaled = true
+customCloneBtn.MouseButton1Click:Connect(function()
+    CloneBatch(cloneCount)
+end)
+ 
+
+-- These controls are now provided by the separate Shadow Hub interface.
+-- Hide only their SHADCOM counterparts, keeping existing handlers intact.
+ahButton.Visible = false
+cloneInput.Visible = false
+autoSwordBtn.Visible = false
+customCloneBtn.Visible = false
+
+local listFrame = Instance.new("ScrollingFrame", Frame)
+listFrame.Name = "PlayerList"
+listFrame.Size = UDim2.new(1, -4, 0.82, 0)
+listFrame.CanvasSize = UDim2.new(0, 0, 0, 0)
+listFrame.ScrollBarThickness = 4
+listFrame.BackgroundTransparency = 0.2
+listFrame.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+listFrame.Active = true
+listFrame.ScrollingEnabled = true
+listFrame.AutomaticCanvasSize = Enum.AutomaticSize.Y
+listFrame.Draggable = true
+listFrame.LayoutOrder = 10
+
+
+function RefreshList()
+    listFrame:ClearAllChildren()
+
+    local layout = Instance.new("UIListLayout", listFrame)
+    layout.Padding = UDim.new(0, 1)
+    layout.FillDirection = Enum.FillDirection.Vertical
+
+    layout:GetPropertyChangedSignal("AbsoluteContentSize"):Connect(function()
+        listFrame.CanvasSize = UDim2.new(
+            0, 0, 0, layout.AbsoluteContentSize.Y
+        )
+    end)
+
+    local header = Instance.new("Frame", listFrame)
+    header.Size = UDim2.new(1, -2, 0, 18)
+    header.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+
+    local function Label(parent, text, size, position, color)
+        local lbl = Instance.new("TextLabel", parent)
+        lbl.Size = size
+        lbl.Position = position
+        lbl.BackgroundTransparency = 1
+        lbl.Text = text
+        lbl.TextColor3 = color
+        lbl.Font = Enum.Font.SourceSansBold
+        lbl.TextScaled = true
+        return lbl
+    end
+
+    Label(header, "PLAYER", UDim2.new(0.30, 0, 1, 0),
+        UDim2.new(0, 0, 0, 0), Color3.new(1, 1, 1))
+
+    Label(header, "M", UDim2.new(0.10, 0, 1, 0),
+        UDim2.new(0.30, 0, 0, 0), Color3.fromRGB(0, 170, 255))
+
+    Label(header, "E", UDim2.new(0.10, 0, 1, 0),
+        UDim2.new(0.40, 0, 0, 0), Color3.fromRGB(255, 255, 0))
+
+    Label(header, "LOOP", UDim2.new(0.25, 0, 1, 0),
+        UDim2.new(0.50, 0, 0, 0), Color3.new(1, 1, 1))
+
+    Label(header, "PERM", UDim2.new(0.25, 0, 1, 0),
+        UDim2.new(0.75, 0, 0, 0), Color3.new(1, 1, 1))
+
+    for _, plr in ipairs(Players:GetPlayers()) do
+        if plr ~= LocalPlayer then
+
+            local row = Instance.new("Frame", listFrame)
+            row.Size = UDim2.new(1, -2, 0, 18)
+            row.BackgroundTransparency = 1
+
+            Label(row, plr.Name,
+                UDim2.new(0.30, 0, 1, 0),
+                UDim2.new(0, 0, 0, 0),
+                Color3.new(1, 1, 1))
+
+            Label(row, tostring(MyDeathsByPlayer[plr.Name] or 0),
+                UDim2.new(0.10, 0, 1, 0),
+                UDim2.new(0.30, 0, 0, 0),
+                Color3.fromRGB(0, 170, 255))
+
+            Label(row, tostring(GetPlayerKills(plr.Name)),
+                UDim2.new(0.10, 0, 1, 0),
+                UDim2.new(0.40, 0, 0, 0),
+                Color3.fromRGB(255, 255, 0))
+
+            local loopBtn = Instance.new("TextButton", row)
+            loopBtn.Size = UDim2.new(0.25, -1, 1, 0)
+            loopBtn.Position = UDim2.new(0.50, 0, 0, 0)
+            loopBtn.Text = "Loop"
+            loopBtn.TextScaled = true
+            loopBtn.Font = Enum.Font.SourceSans
+            loopBtn.TextColor3 = Color3.new(1, 1, 1)
+
+            loopBtn.BackgroundColor3 = LoopPlayers[plr]
+                and Color3.fromRGB(0, 170, 0)
+                or Color3.fromRGB(70, 70, 70)
+
+            loopBtn.MouseButton1Click:Connect(function()
+                if LoopPlayers[plr] then
+                    LoopPlayers[plr] = nil
+                else
+                    LoopPlayers[plr] = true
+                end
+                RefreshList()
+            end)
+
+            local permBtn = Instance.new("TextButton", row)
+            permBtn.Size = UDim2.new(0.25, -1, 1, 0)
+            permBtn.Position = UDim2.new(0.75, 0, 0, 0)
+            permBtn.Text = "Perm"
+            permBtn.TextScaled = true
+            permBtn.Font = Enum.Font.SourceSans
+            permBtn.TextColor3 = Color3.new(1, 1, 1)
+
+            permBtn.BackgroundColor3 = PermPlayers[plr.Name]
+                and Color3.fromRGB(200, 0, 200)
+                or Color3.fromRGB(70, 70, 70)
+
+            permBtn.MouseButton1Click:Connect(function()
+                if PermPlayers[plr.Name] then
+                    PermPlayers[plr.Name] = nil
+
+                    for i, name in ipairs(PermLoopNames) do
+                        if name == plr.Name then
+                            table.remove(PermLoopNames, i)
+                            break
+                        end
+                    end
+                else
+                    PermPlayers[plr.Name] = true
+
+                    if not table.find(PermLoopNames, plr.Name) then
+                        table.insert(PermLoopNames, plr.Name)
+                    end
+                end
+
+                SavePermLoop()
+
+
+local function CheckPermPlayerJoin(player)
+    if table.find(PermLoopNames, player.Name) then
+        NotifyPermLoop(player.Name, true)
+    end
+end
+
+for _, player in ipairs(Players:GetPlayers()) do
+    if player ~= LocalPlayer then
+        CheckPermPlayerJoin(player)
+    end
+end
+
+Players.PlayerAdded:Connect(function(player)
+    if player ~= LocalPlayer then
+        CheckPermPlayerJoi(player)
+    end
+end)
+                RefreshList()
+            end)
+        end
+    end
+end
+
+local StarterGui = game:GetService("StarterGui")
+
+local function NotifyPermLoop(playerName, enabled)
+    task.spawn(function()
+        local success = false
+
+        for attempt = 1, 10 do
+            success = pcall(function()
+                StarterGui:SetCore("SendNotification", {
+                    Title = "BONAK NA PLAYER",
+                    Text = enabled
+                        and ("Added: " .. playerName)
+                        or ("Removed: " .. playerName),
+                    Duration = 4
+                })
+            end)
+
+            if success then
+                break
+            end
+
+            task.wait(0.5)
+        end
+    end)
+end
+
+RefreshList()
+
+
+local Footer = Instance.new("TextLabel")
+Footer.Name = "ShadowHubFooter"
+Footer.Parent = Frame
+Footer.Size = UDim2.new(1, -8, 0, 55)
+Footer.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
+Footer.BackgroundTransparency = 0
+Footer.BorderSizePixel = 0
+
+Footer.RichText = true
+Footer.Text =
+    '<font color="#CCCCCC">Made By: </font>' ..
+    '<font color="#00BFFF"><b>Naliza27</b></font>' ..
+    '<font color="#CCCCCC"> from Shadow Hub</font>\n' ..
+    '<font color="#CCCCCC">Shadow: </font>' ..
+    '<font color="#00FF88"><b>' .. LocalPlayer.Name .. '</b></font>\n' ..
+    '<font color="#FFD700"><b>SHADCOM v3.5.8</b></font>'
+
+Footer.TextColor3 = Color3.fromRGB(255, 255, 255)
+Footer.TextSize = 12
+Footer.Font = Enum.Font.Gotham
+Footer.TextWrapped = true
+Footer.TextXAlignment = Enum.TextXAlignment.Center
+Footer.TextYAlignment = Enum.TextYAlignment.Center
+Footer.LayoutOrder = 20
+
+local lastCloneTime = 0
+local CLONE_COOLDOWN = 1
+
+
+local SpawnLocation = CFrame.new(
+    68.7114563,
+    97.6104965,
+    -327.364166,
+    0.980401337,
+    -2.41431497e-08,
+    0.197010666,
+    2.59095607e-08,
+    1,
+    -6.38857944e-09,
+    -0.197010666,
+    0,
+    0.980401337
+)
+
+local function SetupCharacter(character)
+    local humanoid = character:WaitForChild("Humanoid")
+    local hrp = character:WaitForChild("HumanoidRootPart")
+
+    task.wait(0.5)
+
+    if character.Parent and humanoid.Health > 0 then
+        character:PivotTo(SpawnLocation)
+    end
+
+    humanoid.Died:Connect(function()
+
+        local now = os.clock()
+
+ LocalPlayer.CharacterAdded:Connect(function(character)
+    character:WaitForChild("Humanoid")
+    task.wait(1)
+
+    if autoSwordEnabled then
+        AutoUseAllSword()
+    end
+end)
+
+        if now - lastCloneTime >= CLONE_COOLDOWN then
+            lastCloneTime = now
+            CloneBatch(cloneCount)
+        end
+
+    end)
+end
+
+LocalPlayer.CharacterAdded:Connect(SetupCharacter)
+
+if LocalPlayer.Character then
+    task.spawn(SetupCharacter, LocalPlayer.Character)
+end
+
+
+RefreshList()
+StarterGui:SetCore("SendNotification", {
+    Title = "SHADCOM",
+    Text = "GUI loaded successfully!",
+    Duration = 4
+})
