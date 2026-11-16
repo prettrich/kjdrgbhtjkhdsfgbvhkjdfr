@@ -1,4 +1,4 @@
--- ShadowChat v3.7.2 - invitations, member lists, room notifications
+-- ShadowChat v3.8.6 - 500-character messages and 500-message display history
 -- Replace only these two values before running.
 local SUPABASE_URL = "https://jwyubmjadrqpfronkekt.supabase.co"
 local SUPABASE_KEY = "sb_publishable_LVzVuQMyG0-3hDKJlaZ2ag_wquBImsI"
@@ -33,6 +33,21 @@ local function updateGlobalBadge()
 end
 local busy = false
 local POLL_SECONDS = 2
+local MAX_MESSAGE_CHARS = 500
+local MAX_DISPLAY_MESSAGES = 500
+local function trimMessageFrames(pane)
+    local frames = {}
+    for _, child in ipairs(pane:GetChildren()) do
+        if child:IsA("Frame") then table.insert(frames, child) end
+    end
+    if #frames <= MAX_DISPLAY_MESSAGES then return end
+    table.sort(frames, function(a,b) return a.LayoutOrder < b.LayoutOrder end)
+    for i = 1, #frames - MAX_DISPLAY_MESSAGES do frames[i]:Destroy() end
+end
+local function messageLength(text)
+    local length = utf8.len(text)
+    return length or math.huge
+end
 local SESSION_FILE = "ShadowChat_session_" .. tostring(player.UserId) .. ".json"
 local connections = {}
 local messageEntries = {}
@@ -236,6 +251,13 @@ local input = make("TextBox", inputHolder, {
     TextScaled = false, TextXAlignment = Enum.TextXAlignment.Left,
     TextYAlignment = Enum.TextYAlignment.Center
 })
+connect(input:GetPropertyChangedSignal("Text"), function()
+    local value = input.Text
+    if messageLength(value) > MAX_MESSAGE_CHARS then
+        local cut = utf8.offset(value, MAX_MESSAGE_CHARS + 1)
+        if cut then input.Text = value:sub(1, cut - 1) end
+    end
+end)
 make("UITextSizeConstraint", input, {MinTextSize = 10, MaxTextSize = 20})
 -- The text field grows horizontally inside the clipped holder. Its position is
 -- adjusted to keep the caret in view, without ellipses or text leaking outside.
@@ -433,6 +455,13 @@ local dmInput = make("TextBox", dmInputHolder, {
     TextTruncate = Enum.TextTruncate.None,
     TextXAlignment = Enum.TextXAlignment.Left
 })
+connect(dmInput:GetPropertyChangedSignal("Text"), function()
+    local value = dmInput.Text
+    if messageLength(value) > MAX_MESSAGE_CHARS then
+        local cut = utf8.offset(value, MAX_MESSAGE_CHARS + 1)
+        if cut then dmInput.Text = value:sub(1, cut - 1) end
+    end
+end)
 local dmSend = button(dmPanel, "Send", UDim2.fromScale(0.765, 0.82),
     UDim2.fromScale(0.21, 0.145), C.accent)
 dmSend.Visible = false
@@ -552,7 +581,8 @@ fetchDMThread = function()
         return
     end
     local added = false
-    for _, msg in ipairs(data) do
+    for idx = #data, 1, -1 do
+        local msg = data[idx]
         if msg.id and not dmSeen[msg.id] then
             dmSeen[msg.id] = true
             added = true
@@ -601,6 +631,7 @@ fetchDMThread = function()
             end
         end
     end
+    trimMessageFrames(dmThread)
     if added then dmThreadBottom() end
     -- Read receipts are updated only while the thread is visible.
     if activeTab == "DMs" and dmThread.Visible then
@@ -610,7 +641,7 @@ end
 local function sendDM()
     if not alive or not dmCurrent or dmSending then return end
     local body = dmInput.Text:match("^%s*(.-)%s*$")
-    if body == "" or #body > 2000 then return end
+    if body == "" or messageLength(body) > MAX_MESSAGE_CHARS then return end
     dmSending = true
     dmInput.Text = ""
     local id = dmCurrent.conversation_id
@@ -808,6 +839,13 @@ roomUI.roomInput = make("TextBox", roomUI.roomInputHolder, {
     MultiLine = false, TextWrapped = false, TextTruncate = Enum.TextTruncate.None,
     TextXAlignment = Enum.TextXAlignment.Left
 })
+connect(roomUI.roomInput:GetPropertyChangedSignal("Text"), function()
+    local value = roomUI.roomInput.Text
+    if messageLength(value) > MAX_MESSAGE_CHARS then
+        local cut = utf8.offset(value, MAX_MESSAGE_CHARS + 1)
+        if cut then roomUI.roomInput.Text = value:sub(1, cut - 1) end
+    end
+end)
 roomUI.roomSend = button(roomUI.roomThreadPane, "Send", UDim2.fromScale(0.775,0.835),
     UDim2.fromScale(0.2,0.14), C.accent)
 -- Room invitations and member management (v3.7).
@@ -1299,7 +1337,7 @@ local function pollPublicRoom()
     local id = currentPublicRoom.id
     local tableName = currentPublicRoom.private and "shadowchat_private_messages" or "shadowchat_public_messages"
     local path = "/rest/v1/" .. tableName .. "?room_id=eq." .. id
-        .. "&select=id,sender_id,body,created_at&order=id.asc&limit=100"
+        .. "&select=id,sender_id,body,created_at&order=id.desc&limit=500"
     local code, data, raw = authorized("GET", path)
     roomPollBusy = false
     if not alive or not currentPublicRoom or currentPublicRoom.id ~= id then return end
@@ -1308,7 +1346,8 @@ local function pollPublicRoom()
         return
     end
     local added = false
-    for _, msg in ipairs(data) do
+    for idx = #data, 1, -1 do
+        local msg = data[idx]
         if msg.id and not roomSeen[msg.id] then
             roomSeen[msg.id] = true
             added = true
@@ -1370,6 +1409,7 @@ local function pollPublicRoom()
             end
         end)
     end
+    trimMessageFrames(roomUI.roomThread)
     if added then
         task.defer(function()
             if alive and roomUI.roomThread.Parent then
@@ -1383,7 +1423,7 @@ end
 local function sendPublicRoom()
     if not currentPublicRoom or roomBusy then return end
     local body = roomUI.roomInput.Text:match("^%s*(.-)%s*$")
-    if #body < 1 or #body > 2000 then return end
+    if #body < 1 or messageLength(body) > MAX_MESSAGE_CHARS then return end
     roomBusy = true
     local room=currentPublicRoom
     local id=room.id
@@ -1617,7 +1657,7 @@ local function addMessage(name, body, mine)
         name = name, body = body, rich = rich}
     table.insert(messageEntries, entry)
     measureRow(entry)
-    if #messageEntries > 150 then
+    if #messageEntries > MAX_DISPLAY_MESSAGES then
         local old = table.remove(messageEntries, 1)
         old.item:Destroy()
     end
@@ -1984,7 +2024,7 @@ local function getMessages()
     if not roomId then return end
     local path = "/rest/v1/messages?room_id=eq." .. roomId
         .. "&select=id,body,sender_id,profile:profiles!messages_sender_id_fkey(roblox_username,roblox_display_name)"
-        .. "&order=id.desc&limit=50"
+        .. "&order=id.desc&limit=500"
     local code, messages, raw = authorized("GET", path)
     if code ~= 200 or type(messages) ~= "table" then
         status("Connection error (" .. tostring(code) .. ")", C.red)
@@ -2014,8 +2054,8 @@ local function sendMessage(text)
     if busy or not roomId or not alive then return end
     if type(text) ~= "string" then return end
     text = text:match("^%s*(.-)%s*$")
-    if text == "" or #text > 2000 then
-        status("Message must be 1–2000 bytes", C.red)
+    if text == "" or messageLength(text) > MAX_MESSAGE_CHARS then
+        status("Message must be 1–500 characters", C.red)
         return
     end
     busy = true
@@ -2117,4 +2157,4 @@ task.spawn(function()
         if alive then getMessages() end
     end
 end)
-print("[ShadowChat] started. Use getgenv().ShadowChatStop() to close it.")
+print("[ShadowChat] v3.8.6 started. Use getgenv().ShadowChatStop() to close it.")
