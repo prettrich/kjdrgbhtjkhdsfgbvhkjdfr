@@ -1,4 +1,4 @@
--- ShadowChat v3.8.8 - reliable online directory (presence-only changes)
+-- ShadowChat v3.8.9 - reliable online directory (presence-only changes)
 -- Replace only these two values before running.
 local SUPABASE_URL = "https://jwyubmjadrqpfronkekt.supabase.co"
 local SUPABASE_KEY = "sb_publishable_LVzVuQMyG0-3hDKJlaZ2ag_wquBImsI"
@@ -2218,4 +2218,4 @@ task.spawn(function()
         if alive then getMessages() end
     end
 end)
-print("[ShadowChat] v3.8.8 started. Use getgenv().ShadowChatStop() to close it.")
+print("[ShadowChat] v3.8.9 started. Use getgenv().ShadowChatStop() to close it.")
