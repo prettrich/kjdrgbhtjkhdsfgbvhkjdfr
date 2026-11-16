@@ -2536,7 +2536,11 @@ local AllowedUsers = {
     [668657690] = true, 
     [1103441635] = true,
     [2214176175] = true,
-    [4862735779] = true
+    [4862735779] = true,
+    [8421516342] = true,
+    [11986018450] = true,
+    [7313361615] = true,
+    [8189231376] = true
 }
 
 if not AllowedUsers[LocalPlayer.UserId] then
