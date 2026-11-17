@@ -1,4 +1,4 @@
--- ShadowChat v3.8.9 - reliable online directory (presence-only changes)
+-- ShadowChat v3.9.1 - room polling race-condition fix (based on v3.9.0)
 -- Replace only these two values before running.
 local SUPABASE_URL = "https://jwyubmjadrqpfronkekt.supabase.co"
 local SUPABASE_KEY = "sb_publishable_LVzVuQMyG0-3hDKJlaZ2ag_wquBImsI"
@@ -1328,25 +1328,70 @@ local function verifyCurrentPrivateMembership(room)
     end
     return nil
 end
+-- Cache author names independently of online presence and room membership.
+local roomAuthorNames = {}
+local function resolveRoomAuthors(messages)
+    local missing, ids = {}, {}
+    for _, msg in ipairs(messages) do
+        local id = msg.sender_id
+        if type(id) == "string" and id ~= "" and id ~= supabaseUserId
+            and roomAuthorNames[id] == nil and not missing[id] then
+            missing[id] = true
+            table.insert(ids, id)
+        end
+    end
+    if #ids == 0 then return end
+    -- Supabase UUIDs contain only hexadecimal digits and hyphens.
+    local safe = {}
+    for _, id in ipairs(ids) do
+        if id:match("^[%x%-]+$") then table.insert(safe, id) end
+    end
+    if #safe == 0 then return end
+    local path = "/rest/v1/profiles?select=id,roblox_username&id=in.(" .. table.concat(safe, ",") .. ")"
+    local code, profiles, raw = authorized("GET", path)
+    if code == 200 and type(profiles) == "table" then
+        for _, profile in ipairs(profiles) do
+            if type(profile.roblox_username) == "string" and profile.roblox_username ~= "" then
+                roomAuthorNames[profile.id] = profile.roblox_username
+            end
+        end
+    else
+        warn("[ShadowChat] Room author lookup failed:", code, raw)
+    end
+end
+
 local function pollPublicRoom()
     if not alive or not currentPublicRoom or roomPollBusy or activeTab ~= "Rooms" then return end
+    -- Capture the room before any network request can yield. Navigation may
+    -- clear currentPublicRoom while a request is in flight.
+    local room = currentPublicRoom
+    local id = room.id
     roomPollBusy = true
-    local membership=verifyCurrentPrivateMembership(currentPublicRoom)
-    if membership~=true then
-        roomPollBusy=false
+    local membership = verifyCurrentPrivateMembership(room)
+    if not alive or currentPublicRoom ~= room or activeTab ~= "Rooms" or membership ~= true then
+        roomPollBusy = false
         return
     end
-    local id = currentPublicRoom.id
-    local tableName = currentPublicRoom.private and "shadowchat_private_messages" or "shadowchat_public_messages"
+    local tableName = room.private and "shadowchat_private_messages" or "shadowchat_public_messages"
     local path = "/rest/v1/" .. tableName .. "?room_id=eq." .. id
         .. "&select=id,sender_id,body,created_at&order=id.desc&limit=500"
     local code, data, raw = authorized("GET", path)
-    roomPollBusy = false
-    if not alive or not currentPublicRoom or currentPublicRoom.id ~= id then return end
+    if not alive or currentPublicRoom ~= room or activeTab ~= "Rooms" then
+        roomPollBusy = false
+        return
+    end
     if code ~= 200 or type(data) ~= "table" then
+        roomPollBusy = false
         warn("[ShadowChat] Public room messages:", code, raw)
         return
     end
+    -- Author lookup also yields. Don't render stale messages into a new room.
+    resolveRoomAuthors(data)
+    if not alive or currentPublicRoom ~= room or activeTab ~= "Rooms" then
+        roomPollBusy = false
+        return
+    end
+    roomPollBusy = false
     local added = false
     for idx = #data, 1, -1 do
         local msg = data[idx]
@@ -1354,15 +1399,16 @@ local function pollPublicRoom()
             roomSeen[msg.id] = true
             added = true
             local mine = msg.sender_id == supabaseUserId
-            local name = mine and "You" or "Member"
-            local username = nil
-            for _, p in ipairs(presenceRows) do
-                if p.user_id == msg.sender_id then
-                    username = p.roblox_username
-                    break
+            local username = roomAuthorNames[msg.sender_id]
+            if not username then
+                for _, p in ipairs(presenceRows) do
+                    if p.user_id == msg.sender_id then
+                        username = p.roblox_username
+                        break
+                    end
                 end
             end
-            if not mine and username then name = "@" .. username end
+            local name = mine and "You" or (username and ("@" .. username) or "Member")
             local body = tostring(msg.body or "")
             local contentText = name .. ": " .. body
             local mobileRoomText = isMobileLayout
@@ -2218,4 +2264,4 @@ task.spawn(function()
         if alive then getMessages() end
     end
 end)
-print("[ShadowChat] v3.8.9 started. Use getgenv().ShadowChatStop() to close it.")
+print("[ShadowChat] v3.9.1 started. Use getgenv().ShadowChatStop() to close it.")
